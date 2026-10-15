@@ -11,14 +11,10 @@ export const minimalExample = {
     homepage: { enabled: true, label: "Home" },
     ourStory: { enabled: true, label: "Our Story" },
     events: { enabled: true, label: "Events & RSVP" },
-    photoGallery: { enabled: false, label: "Photo Gallery" },
     uploadPhotos: { enabled: false, label: "Upload Photos" },
-    blessings: { enabled: true, label: "Blessings" },
-    weddingParty: { enabled: false, label: "Wedding Party" },
     registry: { enabled: false, label: "Registry" },
     travel: { enabled: false, label: "Travel & Accommodation" },
     faq: { enabled: false, label: "FAQ" },
-    timeline: { enabled: false, label: "Timeline" },
   },
 
   // Minimal events - just ceremony and reception
@@ -77,15 +73,7 @@ export const minimalExample = {
       intro: "A few special moments.",
       images: [],
     },
-    milestones: [],
   },
 
-  // Simple blessings
-  blessings: {
-    title: "Leave Us a Message",
-    subtitle: "We'd love to hear from you!",
-    showAllBlessings: false,
-    enableSearch: false,
-  },
 };
 

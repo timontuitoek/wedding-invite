@@ -46,11 +46,11 @@ function Countdown({ targetDate, className = '' }) {
       {timeUnits.map((unit, index) => (
         <div key={index} className="text-center">
           <div className="bg-white rounded-xl shadow-apple px-6 py-4 min-w-[80px]">
-            <div className="text-3xl font-bold text-apple-gray-900">
+            <div className="text-3xl font-bold text-sage-900">
               {String(unit.value).padStart(2, '0')}
             </div>
           </div>
-          <div className="mt-2 text-sm text-apple-gray-600 font-medium">
+          <div className="mt-2 text-sm text-sage-600 font-medium">
             {unit.label}
           </div>
         </div>

@@ -92,14 +92,14 @@ function Registry() {
   };
 
   return (
-    <div className="min-h-screen bg-apple-gray-50 pt-24 pb-20">
+    <div className="min-h-screen bg-ivory-50 pt-28 pb-26">
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-title font-semibold text-apple-gray-900 mb-4">
+          <h1 className="section-header text-4xl sm:text-title font-semibold text-sage-900">
             {siteConfig.registry?.title || 'Wedding Registry'}
           </h1>
-          <p className="text-lg text-apple-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-sage-600 max-w-2xl mx-auto">
             {siteConfig.registry?.subtitle || "Your presence is the greatest gift, but if you'd like to honor us with something special..."}
           </p>
         </div>
@@ -107,7 +107,7 @@ function Registry() {
         {/* Registries */}
         {registries.length > 0 && (
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-apple-gray-900 mb-6 text-center">
+            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
               Gift Registries
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -118,18 +118,18 @@ function Registry() {
                 return (
                   <Card key={index} className="p-6 text-center relative">
                     {reserved && (
-                      <div className="absolute top-4 right-4 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                      <div className="absolute top-4 right-4 bg-rose-100 text-rose-900 border border-rose-200 text-xs px-2 py-1 rounded-full font-medium">
                         Reserved
                       </div>
                     )}
-                    <h3 className="text-xl font-semibold text-apple-gray-900 mb-2">
+                    <h3 className="text-xl font-semibold text-sage-900 mb-2">
                       {registry.name}
                     </h3>
                     {registry.description && (
-                      <p className="text-apple-gray-600 mb-4">{registry.description}</p>
+                      <p className="text-sage-600 mb-4">{registry.description}</p>
                     )}
                     {reserved && (
-                      <p className="text-sm text-apple-gray-500 mb-4 italic">
+                      <p className="text-sm text-sage-600 mb-4 italic">
                         Reserved by: {reservations[giftId]?.reservedBy}
                       </p>
                     )}
@@ -157,17 +157,17 @@ function Registry() {
         {/* Cash Funds */}
         {cashFunds.length > 0 && (
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-apple-gray-900 mb-6 text-center">
+            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
               Cash Funds
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {cashFunds.map((fund, index) => (
                 <Card key={index} className="p-6 text-center">
-                  <h3 className="text-xl font-semibold text-apple-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-sage-900 mb-2">
                     {fund.name}
                   </h3>
                   {fund.description && (
-                    <p className="text-apple-gray-600 mb-4">{fund.description}</p>
+                    <p className="text-sage-600 mb-4">{fund.description}</p>
                   )}
                   <a href={fund.url} target="_blank" rel="noopener noreferrer">
                     <Button variant="secondary">Contribute</Button>
@@ -181,13 +181,13 @@ function Registry() {
         {/* Thank You Message */}
         {thankYouMessage && (
           <div className="text-center mt-12">
-            <p className="text-lg text-apple-gray-700 italic">{thankYouMessage}</p>
+            <p className="text-lg text-sage-700 italic">{thankYouMessage}</p>
           </div>
         )}
 
         {registries.length === 0 && cashFunds.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-apple-gray-500 text-lg">Registry information coming soon!</p>
+            <p className="text-sage-600 text-lg">Registry information coming soon!</p>
           </div>
         )}
 
@@ -201,12 +201,12 @@ function Registry() {
           title="Reserve Gift"
         >
           <form onSubmit={handleReserveSubmit} className="space-y-4">
-            <p className="text-apple-gray-600 mb-4">
+            <p className="text-sage-600 mb-4">
               Reserve <strong>{selectedGift?.name}</strong> to let others know you're planning to purchase it.
             </p>
             
             <div>
-              <label className="block text-sm font-medium text-apple-gray-700 mb-2">
+              <label className="block text-sm font-medium text-sage-700 mb-2">
                 Your Name
               </label>
               <Input
@@ -219,7 +219,7 @@ function Registry() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-apple-gray-700 mb-2">
+              <label className="block text-sm font-medium text-sage-700 mb-2">
                 Your Email
               </label>
               <Input
@@ -232,7 +232,7 @@ function Registry() {
             </div>
 
             {reserveError && (
-              <div className="p-3 bg-red-50 text-red-700 rounded-lg text-sm">
+              <div className="p-3 bg-[var(--w-highlight-bg)] text-[var(--w-highlight-text)] rounded-lg text-sm">
                 {reserveError}
               </div>
             )}

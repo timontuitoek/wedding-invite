@@ -17,9 +17,10 @@ function Button({
   const baseClasses = 'font-medium rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
   
   const variantClasses = {
-    primary: 'bg-apple-gray-900 text-white hover:bg-apple-gray-800 shadow-apple hover:shadow-apple-lg hover:scale-105 active:scale-95',
-    secondary: 'bg-white text-apple-gray-900 border border-apple-gray-200 hover:bg-apple-gray-50 shadow-apple hover:shadow-apple-lg hover:scale-105 active:scale-95',
-    ghost: 'bg-transparent text-apple-gray-900 hover:bg-apple-gray-100',
+    primary: 'btn-wedding-primary shadow-apple hover:shadow-apple-lg hover:scale-105 active:scale-95',
+    secondary: 'btn-wedding-secondary shadow-apple hover:shadow-apple-lg hover:scale-105 active:scale-95',
+    outline: 'btn-wedding-outline shadow-apple hover:shadow-apple-lg hover:scale-105 active:scale-95',
+    ghost: 'btn-wedding-ghost shadow-apple hover:shadow-apple-lg hover:scale-105 active:scale-95',
   };
   
   const sizeClasses = {

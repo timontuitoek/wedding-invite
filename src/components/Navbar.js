@@ -25,14 +25,10 @@ function Navbar() {
     const routes = {
       ourStory: '/our-story',
       events: '/events',
-      photoGallery: '/gallery',
       uploadPhotos: '/upload-photos',
-      blessings: '/blessings',
-      weddingParty: '/wedding-party',
       registry: '/registry',
       travel: '/travel',
       faq: '/faq',
-      timeline: '/timeline',
     };
 
     Object.entries(siteConfig.features).forEach(([key, feature]) => {
@@ -55,20 +51,26 @@ function Navbar() {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/80 backdrop-blur-apple shadow-apple'
-          : 'bg-apple-gray-900/80 backdrop-blur-apple'
+          ? 'bg-[var(--w-bg)]/98 backdrop-blur-apple shadow-apple border-b border-[var(--w-border)]'
+          : 'bg-[var(--w-dark)] backdrop-blur-sm'
       }`}
     >
       <div className="section-container">
         <div className="flex justify-between items-center py-4">
-          {/* Logo or Title */}
+          {/* Logo / Home button */}
           <Link
             to="/"
-            className={`text-xl lg:text-2xl font-semibold tracking-wide transition-colors ${
-              scrolled ? 'text-apple-gray-900' : 'text-white'
-            }`}
+            aria-label="Wedding logo - Home"
+            className="block w-11 h-11 rounded-lg overflow-hidden transition-all duration-200 hover:opacity-80 hover:scale-105 active:scale-95"
           >
-            {siteConfig.couple.displayName}
+            <img
+              src={`${process.env.PUBLIC_URL}/Beige%20and%20Blue%20Floral%20Wedding%20Logo.png`}
+              alt="Wedding logo - Home"
+              width={2000}
+              height={2000}
+              className="w-11 h-11 object-cover rounded-lg"
+              loading="lazy"
+            />
           </Link>
 
           {/* Hamburger Icon for Mobile */}
@@ -76,7 +78,7 @@ function Navbar() {
             <button
               onClick={toggleMenu}
               className={`focus:outline-none p-2 ${
-                scrolled ? 'text-apple-gray-900' : 'text-white'
+                scrolled ? 'text-sage-900' : 'text-white'
               }`}
             >
               <svg
@@ -113,11 +115,11 @@ function Navbar() {
                 className={`text-sm font-medium transition-all duration-200 px-2 py-1 ${
                   isActive(link.path)
                     ? scrolled
-                      ? 'text-apple-blue-600 border-b-2 border-apple-blue-600'
-                      : 'text-white border-b-2 border-white'
+                      ? 'text-rose-800 border-b-2 border-rose-300'
+                      : 'text-white border-b-2 border-rose-300/60'
                     : scrolled
-                    ? 'text-apple-gray-600 hover:text-apple-gray-900'
-                    : 'text-white/80 hover:text-white'
+                    ? 'text-[var(--w-text)] hover:text-[var(--w-text)]'
+                    : 'text-white/90 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -130,7 +132,7 @@ function Navbar() {
         {isOpen && (
           <div
             className={`lg:hidden pb-6 space-y-4 animate-slide-up ${
-              scrolled ? 'text-apple-gray-900' : 'text-white'
+              scrolled ? 'text-sage-900' : 'text-white'
             }`}
           >
             {navLinks.map((link) => (
@@ -141,10 +143,10 @@ function Navbar() {
                 className={`block py-2 px-4 rounded-lg transition-colors ${
                   isActive(link.path)
                     ? scrolled
-                      ? 'bg-apple-blue-50 text-apple-blue-600 font-medium'
+                      ? 'bg-rose-50 text-rose-800 font-medium'
                       : 'bg-white/20 text-white font-medium'
                     : scrolled
-                    ? 'hover:bg-apple-gray-100'
+                    ? 'hover:bg-ivory-100'
                     : 'hover:bg-white/10'
                 }`}
               >

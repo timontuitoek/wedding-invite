@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netlify/functions/submit-blessings/submit-blessings.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Blessings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContactUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactUs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FAQ.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FAQ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurStory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OurStory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PhotoGallery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timeline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Travel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Travel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UploadPhotos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UploadPhotos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WeddingParty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Accordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Accordion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Countdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Countdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/ShareButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/ShareButtons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Timeline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/examples/christian-wedding-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/christian-wedding-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/examples/hindu-wedding-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/examples/minimal-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/minimal-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/siteConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/siteConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/home/tuitoek/WebstormProjects/wedding-invite" value="3Kk6k6TLe64B0t5R3ITLxqYOHWa" />
+    </persistenceIdMap>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="80" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;timontuitoek&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:timontuitoek/wedding-invite.git&quot;,
+    &quot;accountId&quot;: &quot;e8935bc8-53a1-419b-90c1-f5ebdfaa0588&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.000000022585937" />
+      <entry key="S2" value="1.0122591265296368" />
+      <entry key="S5" value="1.171942727267468" />
+      <entry key="S10" value="1.4146597731469566" />
+      <entry key="S30" value="1.7472689126962677" />
+      <entry key="S60" value="1.9479008759768992" />
+      <entry key="M2" value="2.669122073270133" />
+      <entry key="M5" value="5.2626359824332605" />
+      <entry key="M10" value="7.655580963254419" />
+      <entry key="M15" value="8.879957325912915" />
+      <entry key="M30" value="12.216999043185949" />
+      <entry key="H1" value="23.803577714855745" />
+      <entry key="H2" value="44.98993260705762" />
+      <entry key="H4" value="66.4874793269566" />
+      <entry key="D1" value="94.7675356097124" />
+      <entry key="W1" value="100.92893163639404" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="5.151759457002281E-13" />
+      <entry key="MS500" value="0.0034865117463352075" />
+      <entry key="S2" value="0.2464289952801498" />
+      <entry key="S5" value="0.6712064297099839" />
+      <entry key="S10" value="1.0750427829690214" />
+      <entry key="S30" value="1.5966042082173728" />
+      <entry key="S60" value="1.8658029241952039" />
+      <entry key="M2" value="2.6250617895002457" />
+      <entry key="M5" value="5.24173971577195" />
+      <entry key="M10" value="7.643506192315925" />
+      <entry key="M15" value="8.87135432424532" />
+      <entry key="M30" value="12.212309434135067" />
+      <entry key="H1" value="23.801018378829763" />
+      <entry key="H2" value="44.988523362840574" />
+      <entry key="H4" value="66.48671708112097" />
+      <entry key="D1" value="94.76739669948768" />
+      <entry key="W1" value="100.92891143254032" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3IrJaKb2U3amqxFPXQxF6WlkCjZ" />
+  <component name="ProjectSessionTemplates">
+    <option name="inlineTemplate">
+      <template>
+        <option name="modeId" value="Agent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_id" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="BACKGROUND" />
+        <option name="worktreeMode" value="WORKSPACE" />
+      </template>
+    </option>
+    <option name="panelTemplate">
+      <template>
+        <option name="modeId" value="Agent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_id" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="BACKGROUND" />
+        <option name="worktreeMode" value="WORKSPACE" />
+      </template>
+    </option>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/tuitoek/WebstormProjects/microrealestate",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="" />
+      <created>1788516816575</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788516816575</updated>
+      <workItem from="1788516818120" duration="1125000" />
+      <workItem from="1788688045415" duration="1254000" />
+      <workItem from="1788689342784" duration="2409000" />
+      <workItem from="1788858607865" duration="1525000" />
+      <workItem from="1789463454590" duration="599000" />
+      <workItem from="1790013570218" duration="686000" />
+      <workItem from="1792081246494" duration="4552000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

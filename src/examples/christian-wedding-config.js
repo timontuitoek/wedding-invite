@@ -68,34 +68,6 @@ export const christianWeddingExample = {
     ],
   },
 
-  // Christian wedding milestones for timeline
-  timeline: {
-    title: "Our Journey",
-    subtitle: "God's plan for our love story",
-    items: [
-      {
-        date: "2020-01-15",
-        title: "First Date",
-        description: "Our first date at the coffee shop downtown",
-      },
-      {
-        date: "2020-06-20",
-        title: "Official",
-        description: "We made it official!",
-      },
-      {
-        date: "2021-06-20",
-        title: "Moved In Together",
-        description: "Started our life together in our first apartment",
-      },
-      {
-        date: "2023-12-25",
-        title: "Engagement",
-        description: "He proposed on Christmas morning!",
-      },
-    ],
-  },
-
   // FAQ tailored for Christian weddings
   faq: {
     title: "Frequently Asked Questions",

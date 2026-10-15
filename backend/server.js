@@ -13,7 +13,7 @@ const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:3000';
 
 // Enable CORS for communication with the frontend
 app.use(cors({ origin: CORS_ORIGIN }));
-app.use(bodyParser.json()); // Parse JSON body for blessings
+app.use(bodyParser.json());
 
 // Validate required environment variables
 if (!process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
@@ -133,33 +133,6 @@ app.post('/upload', (req, res) => {
     console.error('Request error:', err.message);
     res.status(500).json({ success: false, message: 'File upload failed' });
   });
-});
-
-// Submit blessings to Google Sheets
-app.post('/submit-blessing', async (req, res) => {
-  const { name, email, message } = req.body;
-
-  if (!name || !email || !message) {
-    return res
-      .status(400)
-      .json({ success: false, message: 'All fields are required.' });
-  }
-
-  try {
-    await sheets.spreadsheets.values.append({
-      spreadsheetId: SPREADSHEET_ID,
-      range: 'Sheet1!A1:D1',
-      valueInputOption: 'USER_ENTERED',
-      requestBody: {
-        values: [[name, email, message, new Date().toLocaleString()]],
-      },
-    });
-
-    res.status(200).json({ success: true, message: 'Blessing submitted successfully!' });
-  } catch (error) {
-    console.error('Error submitting blessing:', error.message);
-    res.status(500).json({ success: false, message: 'Failed to submit blessing.' });
-  }
 });
 
 // Start the server

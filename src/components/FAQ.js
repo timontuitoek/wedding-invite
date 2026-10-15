@@ -13,14 +13,14 @@ function FAQ() {
   );
 
   return (
-    <div className="min-h-screen bg-apple-gray-50 pt-24 pb-20">
+    <div className="min-h-screen bg-ivory-50 pt-28 pb-26">
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-title font-semibold text-apple-gray-900 mb-4">
+          <h1 className="section-header text-4xl sm:text-title font-semibold text-sage-900">
             {siteConfig.faq?.title || 'Frequently Asked Questions'}
           </h1>
-          <p className="text-lg text-apple-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-sage-600 max-w-2xl mx-auto">
             {siteConfig.faq?.subtitle || 'Everything you need to know'}
           </p>
         </div>
@@ -51,11 +51,11 @@ function FAQ() {
           </div>
         ) : questions.length === 0 ? (
           <div className="text-center py-20">
-            <p className="text-apple-gray-500 text-lg">FAQ information coming soon!</p>
+            <p className="text-sage-600 text-lg">FAQ information coming soon!</p>
           </div>
         ) : (
           <div className="text-center py-20">
-            <p className="text-apple-gray-500 text-lg">No questions found matching your search.</p>
+            <p className="text-sage-600 text-lg">No questions found matching your search.</p>
           </div>
         )}
       </div>

@@ -13,14 +13,10 @@ function HomePage() {
     const routes = {
       ourStory: { path: '/our-story', icon: '📖' },
       events: { path: '/events', icon: '📅' },
-      photoGallery: { path: '/gallery', icon: '📸' },
       uploadPhotos: { path: '/upload-photos', icon: '⬆️' },
-      blessings: { path: '/blessings', icon: '💌' },
-      weddingParty: { path: '/wedding-party', icon: '👥' },
       registry: { path: '/registry', icon: '🎁' },
       travel: { path: '/travel', icon: '✈️' },
       faq: { path: '/faq', icon: '❓' },
-      timeline: { path: '/timeline', icon: '⏱️' },
     };
 
     Object.entries(siteConfig.features).forEach(([key, feature]) => {
@@ -45,12 +41,13 @@ function HomePage() {
         className="relative w-full h-screen bg-cover bg-center flex items-center justify-center"
         style={{ backgroundImage: `url(${siteConfig.homepage.backgroundImage})` }}
       >
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 -z-10 hero-glow" />
         <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 sm:px-8 max-w-4xl">
-          <h1 className="text-5xl sm:text-display-sm lg:text-display font-bold mb-6 animate-fade-in">
+          <h1 className="text-5xl sm:text-display-sm lg:text-display font-bold mb-6 animate-fade-in drop-shadow-lg">
             {siteConfig.homepage.title}
           </h1>
-          <p className="text-xl sm:text-2xl mb-12 max-w-2xl text-white/90 animate-slide-up">
+          <p className="text-xl sm:text-2xl mb-12 max-w-2xl text-white animate-slide-up">
             {siteConfig.homepage.subtitle}
           </p>
 
@@ -65,7 +62,7 @@ function HomePage() {
           {/* CTA Button */}
           <div className="animate-scale-in mb-8">
             <Link to="/upload-photos">
-              <Button variant="secondary" size="lg">
+              <Button variant="primary" size="lg">
                 {siteConfig.homepage.ctaButton}
               </Button>
             </Link>
@@ -101,12 +98,12 @@ function HomePage() {
 
       {/* Quick Navigation Cards */}
       {quickNavCards.length > 0 && (
-        <section className="section-container py-20 bg-apple-gray-50">
+        <section className="section-container py-26">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-title font-semibold text-apple-gray-900 mb-4">
+            <h2 className="section-header text-3xl sm:text-title font-semibold text-sage-900">
               Explore Our Wedding
             </h2>
-            <p className="text-apple-gray-600 max-w-2xl mx-auto">
+            <p className="text-sage-600 max-w-2xl mx-auto">
               Discover all the details about our special day
             </p>
           </div>
@@ -116,10 +113,10 @@ function HomePage() {
               <Link key={card.key} to={card.path}>
                 <Card className="p-6 text-center cursor-pointer h-full">
                   <div className="text-4xl mb-4">{card.icon}</div>
-                  <h3 className="text-xl font-semibold text-apple-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-sage-900 mb-2">
                     {card.label}
                   </h3>
-                  <p className="text-apple-gray-600 text-sm">
+                  <p className="text-sage-600 text-sm">
                     Click to explore
                   </p>
                 </Card>

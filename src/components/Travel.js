@@ -119,17 +119,17 @@ function Travel() {
   };
 
   return (
-    <div className="min-h-screen bg-apple-gray-50 pt-24 pb-20">
+    <div className="min-h-screen bg-ivory-50 pt-28 pb-26">
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex justify-center items-center gap-4 mb-4">
-            <h1 className="text-4xl sm:text-title font-semibold text-apple-gray-900">
+            <h1 className="section-header text-4xl sm:text-title font-semibold text-sage-900">
               {siteConfig.travel?.title || 'Travel & Accommodation'}
             </h1>
             <button
               onClick={() => window.print()}
-              className="no-print px-3 py-2 text-apple-gray-600 hover:text-apple-gray-900 transition-colors"
+              className="no-print px-3 py-2 text-sage-600 hover:text-sage-900 transition-colors"
               aria-label="Print page"
               title="Print travel info"
             >
@@ -138,7 +138,7 @@ function Travel() {
               </svg>
             </button>
           </div>
-          <p className="text-lg text-apple-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-sage-600 max-w-2xl mx-auto">
             {siteConfig.travel?.subtitle || 'Everything you need to know about getting here and staying here'}
           </p>
         </div>
@@ -146,72 +146,95 @@ function Travel() {
         {/* Hotels */}
         {hotels.length > 0 && (
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-apple-gray-900 mb-6 text-center">
-              Recommended Hotels
+            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
+              Recommended Hotels in Nairobi CBD
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {hotels.map((hotel, index) => (
-                <Card key={index} className="p-6">
-                  <h3 className="text-xl font-semibold text-apple-gray-900 mb-3">
-                    {hotel.name}
+            <p className="text-center text-sage-600 mb-8 max-w-2xl mx-auto">
+              Here are a few hotels in Nairobi CBD for guests travelling in for
+              the wedding. Please confirm rates and availability directly with
+              the hotel.
+            </p>
+            {/* Group hotels by category */}
+            {[
+              "Luxury & Upscale",
+              "Mid-Range & Business",
+              "Budget & Simple",
+            ].map((categoryName) => {
+              const categoryHotels = hotels.filter(
+                (h) => h.category === categoryName
+              );
+              if (categoryHotels.length === 0) return null;
+              return (
+                <div key={categoryName} className="mb-12">
+                  <h3 className="text-xl font-semibold text-sage-900 mb-6 text-center">
+                    {categoryName}
                   </h3>
-                  <p className="text-apple-gray-600 mb-2">{hotel.address}</p>
-                  {hotel.phone && (
-                    <p className="text-apple-gray-600 mb-2">Phone: {hotel.phone}</p>
-                  )}
-                  {hotel.distance && (
-                    <p className="text-apple-blue-600 font-medium mb-2">{hotel.distance}</p>
-                  )}
-                  {hotel.description && (
-                    <p className="text-apple-gray-600 mb-4">{hotel.description}</p>
-                  )}
-                  {hotel.bookingCode && (
-                    <p className="text-sm text-apple-gray-500 mb-4">
-                      Booking Code: <span className="font-mono">{hotel.bookingCode}</span>
-                    </p>
-                  )}
-                  {hotel.website && (
-                    <a href={hotel.website} target="_blank" rel="noopener noreferrer">
-                      <Button variant="primary" size="sm">Book Now</Button>
-                    </a>
-                  )}
-                </Card>
-              ))}
-            </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    {categoryHotels.map((hotel) => (
+                      <Card key={hotel.name} className="p-6">
+                        <h3 className="text-xl font-semibold text-sage-900 mb-1">
+                          {hotel.name}
+                        </h3>
+                        <p className="text-sm text-sage-600 mb-1">
+                          {hotel.class}
+                        </p>
+                        <p className="text-sm text-sage-600 mb-2">
+                          {hotel.rating}
+                        </p>
+                        <p className="text-sm text-sage-600 mb-3">
+                          {hotel.location}
+                        </p>
+                        <p className="text-sage-600 mb-4">
+                          {hotel.description}
+                        </p>
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hotel.name)} Nairobi`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-4 py-2 text-xs bg-[var(--w-accent)] text-white rounded-full hover:bg-[var(--w-accent-hover)] transition-colors"
+                        >
+                          View on Maps
+                        </a>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         )}
 
         {/* Transportation */}
         {(transportation.airport || transportation.parking || transportation.shuttle) && (
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-apple-gray-900 mb-6 text-center">
+            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
               Transportation
             </h2>
             <div className="max-w-3xl mx-auto space-y-4">
               {transportation.airport && (
                 <Card className="p-6">
-                  <h3 className="text-lg font-semibold text-apple-gray-900 mb-2">
+                  <h3 className="text-lg font-semibold text-sage-900 mb-2">
                     Airport Information
                   </h3>
-                  <p className="text-apple-gray-600">
+                  <p className="text-sage-600">
                     <strong>{transportation.airport.name}</strong> ({transportation.airport.code})
                     {transportation.airport.distance && ` - ${transportation.airport.distance} from venue`}
                   </p>
                   {transportation.airport.directions && (
-                    <p className="text-apple-gray-600 mt-2">{transportation.airport.directions}</p>
+                    <p className="text-sage-600 mt-2">{transportation.airport.directions}</p>
                   )}
                 </Card>
               )}
               {transportation.parking && (
                 <Card className="p-6">
-                  <h3 className="text-lg font-semibold text-apple-gray-900 mb-2">Parking</h3>
-                  <p className="text-apple-gray-600">{transportation.parking}</p>
+                  <h3 className="text-lg font-semibold text-sage-900 mb-2">Parking</h3>
+                  <p className="text-sage-600">{transportation.parking}</p>
                 </Card>
               )}
               {transportation.shuttle && (
                 <Card className="p-6">
-                  <h3 className="text-lg font-semibold text-apple-gray-900 mb-2">Shuttle Service</h3>
-                  <p className="text-apple-gray-600">{transportation.shuttle}</p>
+                  <h3 className="text-lg font-semibold text-sage-900 mb-2">Shuttle Service</h3>
+                  <p className="text-sage-600">{transportation.shuttle}</p>
                 </Card>
               )}
             </div>
@@ -221,60 +244,108 @@ function Travel() {
         {/* Local Attractions */}
         {localAttractions.length > 0 && (
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-apple-gray-900 mb-6 text-center">
+            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
               Local Attractions
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              {localAttractions.map((attraction, index) => (
-                <Card key={index} className="p-6">
-                  <h3 className="text-lg font-semibold text-apple-gray-900 mb-2">
-                    {attraction.name}
+            {/* Group attractions by category */}
+            {[
+              "Wildlife & Nature (Within Nairobi)",
+              "Outskirts & Scenic Day Trips (Within 1-2 Hours)",
+              "Cultural & Creative Gems",
+            ].map((categoryName) => {
+              const categoryAttractions = localAttractions.filter(
+                (a) => a.category === categoryName
+              );
+              if (categoryAttractions.length === 0) return null;
+              return (
+                <div key={categoryName} className="mb-12">
+                  <h3 className="text-xl font-semibold text-sage-900 mb-2 text-center">
+                    {categoryName}
                   </h3>
-                  {attraction.description && (
-                    <p className="text-apple-gray-600 mb-4">{attraction.description}</p>
-                  )}
-                  {attraction.website && (
-                    <a href={attraction.website} target="_blank" rel="noopener noreferrer">
-                      <Button variant="secondary" size="sm">Learn More</Button>
-                    </a>
-                  )}
-                </Card>
-              ))}
-            </div>
+                  <p className="text-center text-sage-600 mb-6 max-w-2xl mx-auto">
+                    {categoryAttractions[0].intro}
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    {categoryAttractions.map((attraction) => (
+                      <Card key={attraction.name} className="p-6">
+                        <h3 className="text-xl font-semibold text-sage-900 mb-1">
+                          {attraction.name}
+                        </h3>
+                        {attraction.type && (
+                          <p className="text-sm text-sage-600 mb-1">
+                            {attraction.type}
+                          </p>
+                        )}
+                        {attraction.rating && (
+                          <p className="text-sm text-sage-600 mb-1">
+                            {attraction.rating}
+                          </p>
+                        )}
+                        {attraction.location && (
+                          <p className="text-sm text-sage-600 mb-3">
+                            {attraction.location}
+                          </p>
+                        )}
+                        <p className="text-sage-600 mb-3">
+                          {attraction.description}
+                        </p>
+                        {attraction.rotatingNote && (
+                          <p className="text-xs text-sage-400 italic mb-3">
+                            {attraction.rotatingNote}
+                          </p>
+                        )}
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(attraction.name)} Nairobi`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-4 py-2 text-xs bg-[var(--w-accent)] text-white rounded-full hover:bg-[var(--w-accent-hover)] transition-colors"
+                        >
+                          View on Maps
+                        </a>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+            <p className="text-center text-sage-600 mt-8 max-w-2xl mx-auto">
+              Please check opening hours, entry fees, and booking requirements
+              directly before visiting.
+            </p>
           </div>
         )}
 
         {/* Weather Forecast */}
         {(weather || weatherLoading || weatherError) && (
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-apple-gray-900 mb-6 text-center">
+            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
               Weather Forecast
             </h2>
             {weatherLoading && (
               <Card className="p-6 text-center max-w-2xl mx-auto">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-apple-gray-900 mx-auto mb-2"></div>
-                <p className="text-apple-gray-600">Loading weather forecast...</p>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-sage-600 mx-auto mb-2"></div>
+                <p className="text-sage-600">Loading weather forecast...</p>
               </Card>
             )}
             {weatherError && (
               <Card className="p-6 text-center max-w-2xl mx-auto">
-                <p className="text-apple-gray-600">{weatherError}</p>
+                <p className="text-sage-600">{weatherError}</p>
               </Card>
             )}
             {weather && (
               <div className="max-w-4xl mx-auto">
                 {/* Wedding Day Weather */}
                 <Card className="p-6 mb-6">
-                  <h3 className="text-xl font-semibold text-apple-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-sage-900 mb-4">
                     Wedding Day Forecast
                   </h3>
                   <div className="flex items-center gap-4">
                     <div className="text-5xl">{getWeatherEmoji(weather.weatherCode)}</div>
                     <div className="flex-1">
-                      <p className="text-2xl font-semibold text-apple-gray-900">
+                      <p className="text-2xl font-semibold text-sage-900">
                         {getWeatherDescription(weather.weatherCode)}
                       </p>
-                      <p className="text-apple-gray-600 mt-1">
+                      <p className="text-sage-600 mt-1">
                         {new Date(weather.date).toLocaleDateString('en-US', { 
                           weekday: 'long', 
                           year: 'numeric', 
@@ -282,7 +353,7 @@ function Travel() {
                           day: 'numeric' 
                         })}
                       </p>
-                      <p className="text-lg text-apple-gray-700 mt-2">
+                      <p className="text-lg text-sage-700 mt-2">
                         High: {Math.round(weather.maxTemp)}°C / Low: {Math.round(weather.minTemp)}°C
                       </p>
                     </div>
@@ -292,20 +363,20 @@ function Travel() {
                 {/* 7-Day Forecast */}
                 {weather.forecast && weather.forecast.length > 0 && (
                   <div>
-                    <h4 className="text-lg font-semibold text-apple-gray-900 mb-4 text-center">
+                    <h4 className="text-lg font-semibold text-sage-900 mb-4 text-center">
                       7-Day Forecast
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-3">
                       {weather.forecast.map((day, index) => (
                         <Card key={index} className="p-4 text-center">
-                          <p className="text-sm font-medium text-apple-gray-700 mb-2">
+                          <p className="text-sm font-medium text-sage-700 mb-2">
                             {new Date(day.date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
                           </p>
                           <div className="text-3xl mb-2">{getWeatherEmoji(day.weatherCode)}</div>
-                          <p className="text-xs text-apple-gray-600 mb-1">
+                          <p className="text-xs text-sage-600 mb-1">
                             {getWeatherDescription(day.weatherCode)}
                           </p>
-                          <p className="text-sm text-apple-gray-900">
+                          <p className="text-sm text-sage-900">
                             {Math.round(day.maxTemp)}° / {Math.round(day.minTemp)}°
                           </p>
                         </Card>
@@ -321,7 +392,7 @@ function Travel() {
         {/* Maps */}
         {maps.venue && (
           <div className="mb-8">
-            <h2 className="text-2xl font-semibold text-apple-gray-900 mb-6 text-center">
+            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
               Venue Location
             </h2>
             <div className="max-w-4xl mx-auto">
@@ -335,6 +406,14 @@ function Travel() {
                 title="Venue Location"
               />
             </div>
+            <a
+              href="https://maps.app.goo.gl/njMRbcyr46SdzePEA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-wedding-primary inline-block mt-6 text-center"
+            >
+              Get Directions
+            </a>
           </div>
         )}
       </div>

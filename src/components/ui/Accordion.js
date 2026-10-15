@@ -9,7 +9,7 @@ const highlightText = (text, query) => {
   const parts = text.split(new RegExp(`(${query})`, 'gi'));
   return parts.map((part, i) =>
     part.toLowerCase() === query.toLowerCase() ? (
-      <mark key={i} className="bg-yellow-200 text-apple-gray-900 px-1 rounded">
+      <mark key={i} className="bg-rose-200 text-sage-900 px-1 rounded">
         {part}
       </mark>
     ) : (
@@ -31,16 +31,16 @@ function Accordion({ items, className = '', highlightQuery = '' }) {
   return (
     <div className={`space-y-2 ${className}`}>
       {items.map((item, index) => (
-        <div key={index} className="border border-apple-gray-200 rounded-xl overflow-hidden">
+        <div key={index} className="border border-ivory-200 rounded-xl overflow-hidden">
           <button
             onClick={() => toggle(index)}
-            className="w-full px-6 py-4 flex justify-between items-center hover:bg-apple-gray-50 transition-colors text-left"
+            className="w-full px-6 py-4 flex justify-between items-center hover:bg-ivory-50 transition-colors text-left"
           >
-            <span className="font-medium text-apple-gray-900">
+            <span className="font-medium text-sage-900">
               {highlightQuery ? highlightText(item.title, highlightQuery) : item.title}
             </span>
             <svg
-              className={`w-5 h-5 text-apple-gray-500 transition-transform duration-200 ${
+              className={`w-5 h-5 text-sage-500 transition-transform duration-200 ${
                 openIndex === index ? 'rotate-180' : ''
               }`}
               fill="none"
@@ -51,8 +51,8 @@ function Accordion({ items, className = '', highlightQuery = '' }) {
             </svg>
           </button>
           {openIndex === index && (
-            <div className="px-6 py-4 bg-apple-gray-50 border-t border-apple-gray-200 animate-slide-up">
-              <p className="text-apple-gray-700">
+            <div className="px-6 py-4 bg-ivory-100 border-t border-ivory-200 animate-slide-up">
+              <p className="text-sage-700">
                 {highlightQuery ? highlightText(item.content, highlightQuery) : item.content}
               </p>
             </div>

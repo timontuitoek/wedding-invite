@@ -5,8 +5,8 @@ import React from 'react';
  */
 function Input({ className = '', error = false, ...props }) {
   const errorClasses = error 
-    ? 'border-red-300 focus:ring-red-500' 
-    : 'border-apple-gray-200 focus:ring-apple-blue-500';
+    ? 'border-[var(--w-rose-300)] focus:ring-[var(--w-rose-300)]' 
+    : 'border-[var(--w-border)] focus:ring-[var(--w-rose-300)]';
   
   return (
     <input

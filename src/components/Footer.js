@@ -5,16 +5,16 @@ function Footer() {
   const { tagline, contactEmail, socialMedia } = siteConfig.footer || {};
 
   return (
-    <footer className="bg-apple-gray-900 text-white py-8 mt-auto">
+    <footer className="bg-ivory-50 border-t border-ivory-200 text-sage-800 py-8 mt-auto">
       <div className="section-container">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Tagline */}
-          <p className="text-sm italic text-apple-gray-400 text-center md:text-left">
+          <p className="text-sm italic text-sage-600 text-center md:text-left">
             "{tagline}"
           </p>
 
           {/* Couple Name */}
-          <p className="text-sm font-semibold text-white">
+          <p className="text-sm font-semibold text-sage-900">
             {siteConfig.couple.displayName}
           </p>
 
@@ -25,7 +25,7 @@ function Footer() {
                 href={socialMedia.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-apple-gray-400 hover:text-white transition-colors"
+                className="text-sage-600 hover:text-sage-900 transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -38,7 +38,7 @@ function Footer() {
                 href={socialMedia.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-apple-gray-400 hover:text-white transition-colors"
+                className="text-sage-600 hover:text-sage-900 transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -49,7 +49,7 @@ function Footer() {
             {contactEmail && (
               <a
                 href={`mailto:${contactEmail}`}
-                className="text-apple-gray-400 hover:text-white transition-colors text-sm"
+                className="text-sage-600 hover:text-sage-900 transition-colors text-sm"
               >
                 Contact
               </a>

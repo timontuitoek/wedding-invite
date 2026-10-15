@@ -10,7 +10,7 @@ function Card({ children, className = '', hover = true, ...props }) {
   
   return (
     <div
-      className={`bg-white rounded-2xl shadow-apple ${hoverClasses} ${className}`}
+      className={`bg-[var(--w-surface)] rounded-2xl border-[var(--w-card-border)] shadow-apple ${hoverClasses} ${className}`}
       {...props}
     >
       {children}

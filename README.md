@@ -9,12 +9,11 @@ A beautiful, fully customizable wedding website template built with React and Ta
 - 💌 **Blessings & Messages** - Collect heartfelt messages (stored in Google Sheets - FREE)
 - 📅 **Event Management & RSVP** - Display multiple events with RSVP functionality
 - 📖 **Our Story** - Share your love story with customizable sections
-- 👥 **Wedding Party** - Showcase bridesmaids and groomsmen
 - 🎁 **Registry** - Link to gift registries and cash funds
 - ✈️ **Travel & Accommodation** - Share hotel info and travel details
 - ❓ **FAQ** - Answer common questions
 - ⏱️ **Timeline** - Show relationship milestones
-- 🌍 **Multi-Cultural Support** - Pre-configured for Hindu and Christian weddings
+- 🌍 **Multi-Cultural Support** - Pre-configured for Christian and custom weddings
 - ⚙️ **Fully Configurable** - Enable/disable features, customize everything
 - 🚀 **Free Deployment** - Deploy to Netlify (FREE tier)
 
@@ -37,9 +36,6 @@ A beautiful, fully customizable wedding website template built with React and Ta
 
 ### Blessings
 ![Blessings](screenshots/blessings.png)
-
-### Wedding Party
-![Wedding Party](screenshots/wedding-party.png)
 
 ### Registry
 ![Registry](screenshots/registry.png)
@@ -98,7 +94,6 @@ features: {
   photoGallery: { enabled: true, label: "Photo Gallery" },
   uploadPhotos: { enabled: true, label: "Upload Photos" },
   blessings: { enabled: true, label: "Blessings" },
-  weddingParty: { enabled: true, label: "Wedding Party" },
   registry: { enabled: true, label: "Registry" },
   travel: { enabled: true, label: "Travel & Accommodation" },
   faq: { enabled: true, label: "FAQ" },
@@ -113,13 +108,8 @@ features: {
 The template supports multiple wedding traditions. Set your wedding type in `src/siteConfig.js`:
 
 ```javascript
-weddingType: "hindu", // Options: "hindu", "christian", "custom"
+weddingType: "christian", // Options: "hindu", "christian", "custom"
 ```
-
-### Hindu Wedding
-- Pre-configured events: Engagement, Haldi, Mehndi, Sangeet, Baraat, Vidhi, Reception
-- Traditional terminology and dress codes
-- See `src/examples/hindu-wedding-config.js` for example
 
 ### Christian Wedding
 - Pre-configured events: Rehearsal Dinner, Ceremony, Cocktail Hour, Reception, After Party
@@ -342,7 +332,6 @@ All customizable content is in `src/siteConfig.js`. Edit this file to personaliz
 - **Homepage:** Title, subtitle, call-to-action
 - **Our Story:** Partner stories, how we met, proposal, milestones
 - **Events:** Event details, dates, venues, maps, dress codes
-- **Wedding Party:** Bridesmaids and groomsmen
 - **Registry:** Gift registries and cash funds
 - **Travel:** Hotels, transportation, local attractions
 - **FAQ:** Common questions and answers
@@ -351,7 +340,6 @@ All customizable content is in `src/siteConfig.js`. Edit this file to personaliz
 ### Example Configurations
 
 See `src/examples/` folder for:
-- `hindu-wedding-config.js` - Hindu wedding template
 - `christian-wedding-config.js` - Christian wedding template
 - `minimal-config.js` - Minimal setup template
 

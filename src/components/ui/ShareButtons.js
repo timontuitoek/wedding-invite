@@ -49,7 +49,7 @@ function ShareButtons({ url, title, description, className = '' }) {
       {navigator.share && (
         <button
           onClick={handleNativeShare}
-          className="flex items-center gap-2 px-4 py-2 bg-apple-gray-900 text-white rounded-full hover:bg-apple-gray-800 transition-colors text-sm"
+          className="flex items-center gap-2 px-4 py-2 bg-[var(--w-accent)] text-white rounded-full hover:bg-[var(--w-accent-hover)] transition-colors text-sm"
           aria-label="Share"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ function ShareButtons({ url, title, description, className = '' }) {
         href={shareLinks.facebook}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors text-sm"
+        className="flex items-center gap-2 px-4 py-2 bg-[var(--w-accent)] text-white rounded-full hover:bg-[var(--w-accent-hover)] transition-colors text-sm"
         aria-label="Share on Facebook"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -78,7 +78,7 @@ function ShareButtons({ url, title, description, className = '' }) {
         href={shareLinks.twitter}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-sm"
+        className="flex items-center gap-2 px-4 py-2 bg-[var(--w-sage-900)] text-white rounded-full hover:bg-[var(--w-dark)] transition-colors text-sm"
         aria-label="Share on Twitter"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ function ShareButtons({ url, title, description, className = '' }) {
         href={shareLinks.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors text-sm"
+        className="flex items-center gap-2 px-4 py-2 bg-[var(--w-highlight)] text-[var(--w-dark)] rounded-full hover:bg-[var(--w-rose-700)] transition-colors text-sm"
         aria-label="Share on WhatsApp"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -104,7 +104,7 @@ function ShareButtons({ url, title, description, className = '' }) {
       {/* Email */}
       <a
         href={shareLinks.email}
-        className="flex items-center gap-2 px-4 py-2 bg-apple-gray-700 text-white rounded-full hover:bg-apple-gray-800 transition-colors text-sm"
+        className="flex items-center gap-2 px-4 py-2 bg-[var(--w-accent)] text-white rounded-full hover:bg-[var(--w-accent-hover)] transition-colors text-sm"
         aria-label="Share via Email"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,8 +118,8 @@ function ShareButtons({ url, title, description, className = '' }) {
         onClick={handleCopyLink}
         className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors text-sm ${
           copied
-            ? 'bg-green-500 text-white'
-            : 'bg-apple-gray-200 text-apple-gray-900 hover:bg-apple-gray-300'
+            ? 'bg-[var(--w-highlight)] text-[var(--w-dark)]'
+            : 'bg-[var(--w-border)] text-[var(--w-text)] hover:bg-[var(--w-ivory-300)]'
         }`}
         aria-label="Copy link"
       >

@@ -7,9 +7,9 @@ const siteConfig = {
   // ============================================
   // These are set in .env file, NOT here
   // Required secrets (all FREE - no credit card needed):
-  // - GOOGLE_SERVICE_ACCOUNT_JSON (for photo upload & blessings)
+  // - GOOGLE_SERVICE_ACCOUNT_JSON (for photo upload)
   // - GOOGLE_DRIVE_FOLDER_ID (for photo storage)
-  // - GOOGLE_SPREADSHEET_ID (for blessings & RSVP data)
+  // - GOOGLE_SPREADSHEET_ID (for RSVP data)
   // - REACT_APP_RSVP_API_URL (optional: for RSVP form)
   // See README.md for complete free setup guide
 
@@ -18,7 +18,7 @@ const siteConfig = {
   // ============================================
   // Options: "hindu", "christian", "custom"
   // This determines which event presets are available
-  weddingType: "hindu", // Change to "christian" or "custom" as needed
+  weddingType: "christian", // Change to "hindu" or "custom" as needed
 
   // ============================================
   // FEATURE FLAGS - Enable/disable features
@@ -28,14 +28,10 @@ const siteConfig = {
     homepage: { enabled: true, label: "Home" },
     ourStory: { enabled: true, label: "Our Story" },
     events: { enabled: true, label: "Events & RSVP" },
-    photoGallery: { enabled: true, label: "Photo Gallery" },
     uploadPhotos: { enabled: true, label: "Upload Photos" },
-    blessings: { enabled: true, label: "Blessings" },
-    weddingParty: { enabled: true, label: "Wedding Party" },
     registry: { enabled: true, label: "Registry" },
     travel: { enabled: true, label: "Travel & Accommodation" },
     faq: { enabled: true, label: "FAQ" },
-    timeline: { enabled: true, label: "Timeline" },
   },
 
   // ============================================
@@ -44,15 +40,6 @@ const siteConfig = {
   // Pre-built event templates based on wedding type
   // Use these as reference or copy to events array below
   eventPresets: {
-    hindu: [
-      { name: "Engagement", description: "Ring ceremony and engagement celebration", dressCode: "Semi-formal" },
-      { name: "Haldi", description: "Turmeric ceremony - traditional pre-wedding ritual", dressCode: "Traditional (yellow/white)" },
-      { name: "Mehndi", description: "Henna ceremony - intricate designs and celebration", dressCode: "Traditional (bright colors)" },
-      { name: "Sangeet", description: "Music and dance night with family and friends", dressCode: "Traditional or Semi-formal" },
-      { name: "Baraat", description: "Groom's procession - grand entrance celebration", dressCode: "Traditional" },
-      { name: "Vidhi", description: "Wedding rituals and ceremonies", dressCode: "Traditional" },
-      { name: "Reception", description: "Wedding reception celebration", dressCode: "Formal" },
-    ],
     christian: [
       { name: "Rehearsal Dinner", description: "Pre-wedding dinner with close family and friends", dressCode: "Semi-formal" },
       { name: "Wedding Ceremony", description: "Church ceremony - join us as we say 'I do'", dressCode: "Formal" },
@@ -65,17 +52,17 @@ const siteConfig = {
 
   // Couple Information
   couple: {
-    name1: "Partner 1",
-    name2: "Partner 2",
-    displayName: "Partner 1 & Partner 2", // Used in navbar and footer
+    name1: "Chela",
+    name2: "Josiah",
+    displayName: "Chela weds Josiah", // Used in navbar and footer
     name1Image: "/images/partner1.svg", // Path to partner 1's photo (replace with your image)
     name2Image: "/images/partner2.svg", // Path to partner 2's photo (replace with your image)
   },
 
   // Wedding Date (for countdown timer)
   wedding: {
-    date: "2025-02-22T12:00:00", // ISO format date/time
-    location: "City, Country",
+    date: "2027-02-06T10:00:00", // ISO format date/time
+    location: "AIC Milimani, Nairobi, KE — State House Avenue, next to Lady North Nursery",
   },
 
   // Homepage
@@ -90,12 +77,12 @@ const siteConfig = {
   // Our Story Section
   ourStory: {
     partner1Story: {
-      name: "Partner 1's Story",
+      name: "Chela's Story",
       image: "/images/partner1.svg", // Replace with your photo
       story: "Share your story here. This is where you can tell your guests about your journey, how you met, and what makes your relationship special.",
     },
     partner2Story: {
-      name: "Partner 2's Story",
+      name: "Josiah's Story",
       image: "/images/partner2.svg", // Replace with your photo
       story: "Share your story here. This is where you can tell your guests about your journey, how you met, and what makes your relationship special.",
     },
@@ -119,23 +106,6 @@ const siteConfig = {
         "/images/photo4.svg",
       ],
     },
-    milestones: [
-      {
-        date: "2020-01-15",
-        title: "First Date",
-        description: "Our first date at the coffee shop",
-      },
-      {
-        date: "2021-06-20",
-        title: "Moved In Together",
-        description: "Started our life together",
-      },
-      {
-        date: "2023-12-25",
-        title: "Engagement",
-        description: "He said yes!",
-      },
-    ],
     backgroundImage: "/images/homage_page_background.png",
   },
 
@@ -143,7 +113,6 @@ const siteConfig = {
   // EVENTS/RSVP PAGE
   // ============================================
   // Customize your events below
-  // For Hindu weddings: See eventPresets.hindu above for common events
   // For Christian weddings: See eventPresets.christian above for common events
   // For custom weddings: Create your own event list
   events: {
@@ -152,81 +121,17 @@ const siteConfig = {
     events: [
       {
         id: 1,
-        name: "Engagement & Seemanth Puja",
-        date: "2025-02-22",
-        time: "12:00 PM",
-        venue: "Venue Name, City",
-        mapEmbed: "https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_URL",
+        name: "Wedding Event Details",
+        date: "2027-02-06",
+        time: "10:00 AM",
+        venue: "AIC Milimani, Nairobi, KE — State House Avenue, next to Lady North Nursery",
+        mapEmbed: "https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3988.8114145647123!2d36.80800067323749!3d-1.2872550987005096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x182f10cf42a495c9%3A0xd8eb6c8597d7b8eb!2sAIC%20Milimani%2C%20Nairobi%20KE%2C%20State%20House%20Avenue%2C%20Next%20to%20Lady%20North%20Nursery%2C%20Nairobi%2C%20Kenya!3m2!1d-1.2872550999999999!2d36.8105756!5e0!3m2!1sen!2sus!4v1792091356084!5m2!1sen!2sus",
         dressCode: "Semi-formal", // Optional
-        description: "Join us for our engagement ceremony", // Optional
-        category: "pre-wedding", // Optional: for filtering
-      },
-      {
-        id: 2,
-        name: "Sangeet",
-        date: "2025-02-22",
-        time: "7:00 PM",
-        venue: "Venue Name, City",
-        mapEmbed: "https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_URL",
-        dressCode: "Traditional", // Optional
-        description: "An evening of music and dance", // Optional
-        category: "pre-wedding", // Optional
-      },
-      {
-        id: 3,
-        name: "Vidhi",
-        date: "2025-02-23",
-        time: "9:00 AM",
-        venue: "Venue Name, City",
-        mapEmbed: "https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_URL",
-        dressCode: "Traditional", // Optional
-        description: "Traditional ceremony", // Optional
-        category: "wedding", // Optional
-      },
-      {
-        id: 4,
-        name: "Mangalashtaka",
-        date: "2025-02-23",
-        time: "10:30 AM",
-        venue: "Venue Name, City",
-        mapEmbed: "https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_URL",
-        dressCode: "Traditional", // Optional
-        description: "Main wedding ceremony", // Optional
-        category: "wedding", // Optional
+        description: "wedding ceremony", // Optional
+        category: "wedding", // Optional: for filtering
       },
     ],
-    // Google Apps Script URL for RSVP submissions (optional)
-    // If not using Google Apps Script, you can set this to your own API endpoint
-    rsvpApiUrl: process.env.REACT_APP_RSVP_API_URL || "",
-    accommodationOptions: [
-      { value: "Morning", label: "Morning (9 AM - 12 PM)" },
-      { value: "Afternoon", label: "Afternoon (12 PM - 4 PM)" },
-      { value: "Evening", label: "Evening (4 PM - 8 PM)" },
-      { value: "Night", label: "Night (After 8 PM)" },
-    ],
     backgroundImage: "/images/homage_page_background.png",
-  },
-
-  // Photo Gallery
-  photoGallery: {
-    title: "Our Photo Gallery",
-    subtitle: "Memories captured from our special day",
-    // Show uploaded photos from Google Drive
-    showUploadedPhotos: true, // Set to false to hide uploaded photos
-    // Static photos (always shown if provided)
-    staticPhotos: [], // Array of photo URLs
-    enableFiltering: true,
-    enableDownload: true,
-  },
-
-  // Blessings Page
-  blessings: {
-    title: "Drop Us Your Blessing",
-    subtitle: "Your blessings mean the world to us. Share your thoughts, prayers, and kind words as we embark on this new journey together.",
-    backgroundImage: "/images/homage_page_background.png",
-    showAllBlessings: true, // Show all submitted blessings
-    enableSearch: true,
-    enableLikes: false, // Optional: enable like/react functionality
   },
 
   // Upload Photos Page
@@ -237,40 +142,6 @@ const siteConfig = {
     enableCaptions: true, // Allow users to add captions
     maxFileSize: 10, // MB
     allowedTypes: ["image/jpeg", "image/png", "image/webp"],
-  },
-
-  // Wedding Party
-  weddingParty: {
-    title: "Our Wedding Party",
-    subtitle: "Meet the amazing people standing with us",
-    bridesmaids: [
-      {
-        name: "Bridesmaid 1",
-        role: "Maid of Honor",
-        image: "/images/partner1.svg", // Replace with actual photo
-        bio: "Short bio about this person",
-      },
-      {
-        name: "Bridesmaid 2",
-        role: "Bridesmaid",
-        image: "/images/partner2.svg",
-        bio: "Short bio about this person",
-      },
-    ],
-    groomsmen: [
-      {
-        name: "Groomsman 1",
-        role: "Best Man",
-        image: "/images/partner1.svg", // Replace with actual photo
-        bio: "Short bio about this person",
-      },
-      {
-        name: "Groomsman 2",
-        role: "Groomsman",
-        image: "/images/partner2.svg",
-        bio: "Short bio about this person",
-      },
-    ],
   },
 
   // Registry/Gifts
@@ -312,34 +183,141 @@ const siteConfig = {
     },
     hotels: [
       {
-        name: "Hotel Name",
-        address: "123 Main St, City, State",
-        phone: "+1 (555) 123-4567",
-        website: "https://example.com/hotel",
-        description: "Beautiful hotel near the venue",
-        distance: "0.5 miles from venue",
-        bookingCode: "WEDDING2025", // Optional booking code
+        category: "Luxury & Upscale",
+        name: "Sarova Stanley Hotel",
+        class: "5-star",
+        rating: "4.6/5 (9.5K reviews)",
+        location: "Junction of Kenyatta Avenue and Kimathi Street",
+        description: "Nairobi's historic first luxury hotel (open since 1902), with elegant rooms, an outdoor pool, a full-service spa, multiple restaurants, a bar, and a 5-minute walk to the KICC.",
+      },
+      {
+        category: "Luxury & Upscale",
+        name: "Sarova Panafric",
+        class: "4-star",
+        rating: "4.5/5 (7.7K reviews)",
+        location: "Valley Road, at the Kenyatta Avenue and Ngong Road junction (edge of Upper Hill/CBD)",
+        description: "A contemporary business hotel with rich African heritage, easy access to Kenyatta Avenue and the city center, outdoor spaces, and business-friendly amenities.",
+      },
+      {
+        category: "Mid-Range & Business",
+        name: "Sentrim 680 Hotel",
+        class: "3-star, 253 rooms",
+        rating: "4.1/5 (1.7K reviews)",
+        location: "Kenyatta Avenue / Muindi Mbingu Street",
+        description: "Centrally located on Kenyatta Avenue with conference spaces, meeting rooms, a restaurant, storage rooms, and secure parking, roughly 400-550 meters from the KICC.",
+      },
+      {
+        category: "Mid-Range & Business",
+        name: "Clarion Hotel Nairobi",
+        class: "3-star",
+        rating: "4.2/5 (2.2K reviews)",
+        location: "Moi Avenue (a short walk off Kenyatta Avenue)",
+        description: "Open 24 hours, with a restaurant, trendy bar, cafe, gym, sauna, and terrace.",
+      },
+      {
+        category: "Budget & Simple",
+        name: "The Geed Hotel",
+        class: "3-star",
+        rating: "4.0/5 (150 reviews)",
+        location: "Moi Avenue, near the CBD core",
+        description: "Clean, budget-friendly rooms within walking distance of Kenyatta Avenue.",
+      },
+      {
+        category: "Budget & Simple",
+        name: "Hotel Embassy",
+        class: "Hotel (no star rating given)",
+        rating: "4.0/5 (562 reviews)",
+        location: "Tubman Road, Nairobi (close to Kenyatta Avenue)",
+        description: "Open 24 hours with straightforward rooms and a casual on-site restaurant.",
       },
     ],
     transportation: {
       airport: {
-        name: "City International Airport",
-        code: "XYZ",
-        distance: "20 miles",
-        directions: "Take Highway 101 North, exit at Main Street",
+        name: "Jomo Kenyatta International Airport (NBO)- Nairobi, Kenya",
+        iatacode: "NBO",
+        icadcode: "HKJK",
+        distance: "11.1 miles",
+        directions: "\n" +
+"Travel Overview\n" +
+"\n" +
+"• Driving Time: It typically takes about 26 minutes to drive between the two locations under usual traffic conditions.\n" +
+
+"• Primary Route: The most recommended route is via the Nairobi Expressway/A8, exiting toward Processional Way, then taking Cathedral Road and Ngong Road to State House Avenue. Please note that using the Expressway involves paying a toll fee.",
       },
       parking: "Free parking available at the venue",
       shuttle: "Shuttle service available from hotel (details TBD)",
     },
     localAttractions: [
       {
-        name: "Local Attraction",
-        description: "Great place to visit",
-        website: "https://example.com/attraction",
+        category: "Wildlife & Nature (Within Nairobi)",
+        intro: "These iconic sites are close to the city center and ideal for quick morning or afternoon group excursions.",
+        name: "Nairobi National Park",
+        type: "Wildlife and safari park",
+        location: "Langata Rd",
+        description: "A unique wildlife reserve where guests can see lions, rhinos, and giraffes against a backdrop of city skyscrapers. Half-day or full-day safaris are available, ranging from $30 to $200 per adult.",
+      },
+      {
+        category: "Wildlife & Nature (Within Nairobi)",
+        intro: "These iconic sites are close to the city center and ideal for quick morning or afternoon group excursions.",
+        name: "Giraffe Centre",
+        type: "Nature preserve",
+        rating: "4.6/5 (18.2K reviews)",
+        location: "Duma Rd",
+        description: "A conservation sanctuary where visitors can get up close to hand-feed endangered Rothschild giraffes from a raised wooden platform. It is incredibly popular for couples and wedding photo opportunities.",
+      },
+      {
+        category: "Wildlife & Nature (Within Nairobi)",
+        intro: "These iconic sites are close to the city center and ideal for quick morning or afternoon group excursions.",
+        name: "Sheldrick Wildlife Trust",
+        type: "Animal shelter",
+        rating: "4.6/5 (5.8K reviews)",
+        location: "KWS Central Workshop Gate, Magadi Rd",
+        description: "A world-famous orphanage for baby elephants. Guests can watch the calves being bottle-fed and playing in the mud during the daily public viewing hour.",
+      },
+      {
+        category: "Wildlife & Nature (Within Nairobi)",
+        intro: "These iconic sites are close to the city center and ideal for quick morning or afternoon group excursions.",
+        name: "Karura Forest",
+        description: "A tranquil urban upland forest ideal for group hikes, trail bike rides, and viewing hidden waterfalls and caves. It is a renowned hotspot for local events and pre-wedding photography.",
+      },
+      {
+        category: "Outskirts & Scenic Day Trips (Within 1-2 Hours)",
+        intro: "For wedding guests who want to escape the city bustle, these stunning ridge and highland locations offer dramatic views and refreshing climates.",
+        name: "Ngong Hills",
+        description: "Located just southwest of the city along the Great Rift Valley, these rolling ridges offer panoramic views and refreshing hiking trails framed by massive wind turbines. It is a top romantic escape and hosts popular garden wedding venues.",
+      },
+      {
+        category: "Outskirts & Scenic Day Trips (Within 1-2 Hours)",
+        intro: "For wedding guests who want to escape the city bustle, these stunning ridge and highland locations offer dramatic views and refreshing climates.",
+        name: "Tigoni Tea Green Highlands",
+        description: "A lush, cool highland area just outside Nairobi characterized by sprawling emerald tea plantations. Guests can enjoy nature trails at locations like the One-Stop Waterfall or book a cheese-tasting experience at the nearby Brown's Cheese Factory & Farm.",
+      },
+      {
+        category: "Outskirts & Scenic Day Trips (Within 1-2 Hours)",
+        intro: "For wedding guests who want to escape the city bustle, these stunning ridge and highland locations offer dramatic views and refreshing climates.",
+        name: "Lake Naivasha & Hell's Gate",
+        description: "Roughly a 2-hour drive from Nairobi, this freshwater lake is famous for boat rides alongside hippos, spectacular bird watching, and sunsets. Guests can pair this with a trip to Hell's Gate National Park for rock climbing and cycling.",
+      },
+      {
+        category: "Cultural & Creative Gems",
+        intro: "Perfect for picking up traditional wedding attire, bespoke accessories, or exploring Kenyan heritage.",
+        name: "Maasai Market",
+        type: "Handicraft fair",
+        rating: "4.3/5 (8.3K reviews)",
+        rotatingNote: "This is a rotating market — check where it's held on your visit day.",
+        location: "Supreme Court (note: this is a rotating market)",
+        description: "An open-air, rotating market where tourists can bargain for handmade African jewelry, wood carvings, and vibrant kanga/shuka fabrics.",
+      },
+      {
+        category: "Cultural & Creative Gems",
+        intro: "Perfect for picking up traditional wedding attire, bespoke accessories, or exploring Kenyan heritage.",
+        name: "Kazuri Beads Factory",
+        type: "Stores and shopping",
+        description: "This workshop empowers local women who handcraft vibrant ceramic beads and pottery. Guests can tour the facility to see the step-by-step creation process.",
       },
     ],
     maps: {
-      venue: "https://www.google.com/maps/embed?pb=YOUR_VENUE_MAP",
+      venue: "https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3988.8114145647123!2d36.80800067323749!3d-1.2872550987005096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x182f10cf42a495c9%3A0xd8eb6c8597d7b8eb!2sAIC%20Milimani%2C%20Nairobi%20KE%2C%20State%20House%20Avenue%2C%20Next%20to%20Lady%20North%20Nursery%2C%20Nairobi%2C%20Kenya!3m2!1d-1.2872550999999999!2d36.8105756!5e0!3m2!1sen!2sus!4v1792091356084!5m2!1sen!2sus",
       hotels: "https://www.google.com/maps/embed?pb=YOUR_HOTELS_MAP",
     },
   },
@@ -372,68 +350,6 @@ const siteConfig = {
     ],
   },
 
-  // Timeline
-  timeline: {
-    title: "Our Journey",
-    subtitle: "Milestones in our relationship",
-    showPlanningTimeline: true, // Show wedding planning milestones
-    items: [
-      {
-        date: "2020-01-15",
-        title: "First Date",
-        description: "Our first date at the coffee shop downtown",
-        image: "/images/photo1.svg", // Optional
-        type: "relationship", // "relationship" or "planning"
-      },
-      {
-        date: "2020-06-20",
-        title: "Official",
-        description: "We made it official!",
-        type: "relationship",
-      },
-      {
-        date: "2021-06-20",
-        title: "Moved In Together",
-        description: "Started our life together in our first apartment",
-        type: "relationship",
-      },
-      {
-        date: "2023-12-25",
-        title: "Engagement",
-        description: "He said yes! We're getting married!",
-        image: "/images/photo2.svg", // Optional
-        type: "relationship",
-      },
-    ],
-    // Wedding Planning Timeline
-    planningItems: [
-      {
-        date: "2024-01-15",
-        title: "Started Planning",
-        description: "Began our wedding planning journey",
-        type: "planning",
-      },
-      {
-        date: "2024-03-20",
-        title: "Venue Booked",
-        description: "Found and booked our dream venue",
-        type: "planning",
-      },
-      {
-        date: "2024-06-15",
-        title: "Vendors Selected",
-        description: "Photographer, caterer, and florist confirmed",
-        type: "planning",
-      },
-      {
-        date: "2024-09-01",
-        title: "Invitations Sent",
-        description: "Save the dates and invitations sent to all guests",
-        type: "planning",
-      },
-    ],
-  },
-
   // Footer
   footer: {
     tagline: "True love is the greatest adventure. Thank you for being a part of our journey!",
@@ -446,16 +362,12 @@ const siteConfig = {
 
   // Navigation
   navigation: {
-    blessingsLabel: "Blessings",
     ourStoryLabel: "Our Story",
     eventsLabel: "Events",
-    galleryLabel: "Gallery",
     uploadLabel: "Upload",
-    partyLabel: "Wedding Party",
     registryLabel: "Registry",
     travelLabel: "Travel",
     faqLabel: "FAQ",
-    timelineLabel: "Timeline",
   },
 
   // App Metadata

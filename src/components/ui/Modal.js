@@ -35,7 +35,7 @@ function Modal({ isOpen, onClose, children, className = '' }) {
       onClick={onClose}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-[var(--w-dark)]/40 backdrop-blur-sm" />
       
       {/* Modal Content */}
       <div
@@ -45,7 +45,7 @@ function Modal({ isOpen, onClose, children, className = '' }) {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full hover:bg-apple-gray-100 transition-colors z-10"
+          className="absolute top-4 right-4 p-2 rounded-full hover:bg-ivory-100 transition-colors z-10"
           aria-label="Close"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

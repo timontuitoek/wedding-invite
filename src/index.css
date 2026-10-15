@@ -2,14 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Apple-inspired base styles */
+/* Wedding color system — CSS variables mirroring the Tailwind tokens.
+   Only tints/shades of the three base hues are used: Sage #4A6B5B,
+   Dusty Rose #C4848A, Ivory #EDE8DC. No new hues introduced. */
 @layer base {
+  :root {
+    /* Sage */
+    --w-sage-50: #eef2f0;
+    --w-sage-100: #dbe1de;
+    --w-sage-200: #b7c4bd;
+    --w-sage-300: #96a9a0;
+    --w-sage-400: #728c7f;
+    --w-sage-500: #587768;
+    --w-sage-600: #4a6b5b;
+    --w-sage-700: #3e5a4c;
+    --w-sage-800: #32493e;
+    --w-sage-900: #26382f;
+    --w-sage-950: #1c2923;
+    /* Dusty Rose */
+    --w-rose-50: #faf5f6;
+    --w-rose-100: #f3e6e8;
+    --w-rose-200: #e7ced0;
+    --w-rose-300: #ddb8bb;
+    --w-rose-400: #d19fa4;
+    --w-rose-500: #c98e93;
+    --w-rose-600: #c4848a;
+    --w-rose-700: #a56f74;
+    --w-rose-800: #855a5e;
+    --w-rose-900: #664548;
+    --w-rose-950: #4a3234;
+    /* Ivory / Champagne */
+    --w-ivory-50: #f8f5ef;
+    --w-ivory-100: #ede8dc;
+    --w-ivory-200: #e0d9c7;
+    --w-ivory-300: #d3cab4;
+    --w-ivory-400: #c8c0ad;
+
+    /* Semantic tokens */
+    --w-bg: var(--w-ivory-50);
+    --w-surface: var(--w-ivory-100);
+    --w-border: var(--w-ivory-200);
+    --w-border-strong: var(--w-ivory-400);
+    --w-card-border: var(--w-ivory-300);
+    --w-accent: var(--w-sage-600);
+    --w-accent-hover: var(--w-sage-700);
+    --w-text: var(--w-sage-900);
+    --w-text-secondary: var(--w-sage-600);
+    --w-text-muted: var(--w-sage-300);
+    --w-highlight: var(--w-rose-600);
+    --w-highlight-bg: var(--w-rose-50);
+    --w-highlight-text: var(--w-rose-800);
+    --w-dark: var(--w-sage-950);
+    /* Overlays with alpha — text stays legible over background images */
+    --w-dark-overlay: rgba(28, 41, 35, 0.65);
+
+    /* Modern accents — all tints/shades of the three base hues */
+    --w-glow: rgba(74, 107, 91, 0.15);       /* sage glow for hero */
+    --w-accent-dot: var(--w-sage-600);       /* small heading accent dot */
+    --w-glass: rgba(248, 245, 239, 0.85);    /* ivory glass for mobile menu */
+  }
+
   * {
     @apply antialiased;
   }
   
   body {
-    @apply bg-apple-gray-50 text-apple-gray-900 font-sans;
+    @apply bg-[var(--w-bg)] text-[var(--w-text)] font-sans;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
@@ -22,41 +80,96 @@
 
 /* Custom component styles */
 @layer components {
-  /* Apple-style button */
-  .btn-apple {
+  /* Base button */
+  .btn-wedding {
     @apply px-6 py-3 rounded-full font-medium transition-all duration-200;
     @apply hover:scale-105 active:scale-95;
     @apply shadow-apple hover:shadow-apple-lg;
   }
   
-  .btn-apple-primary {
-    @apply btn-apple bg-apple-gray-900 text-white;
-    @apply hover:bg-apple-gray-800;
+  /* Primary: sage fill with ivory text */
+  .btn-wedding-primary {
+    @apply btn-wedding bg-[var(--w-accent)] text-white;
+    @apply hover:bg-[var(--w-accent-hover)] hover:shadow-[0_0_20px_rgba(74,107,91,0.35)];
   }
   
-  .btn-apple-secondary {
-    @apply btn-apple bg-white text-apple-gray-900 border border-apple-gray-200;
-    @apply hover:bg-apple-gray-50;
+  /* Secondary: soft ivory fill with sage border/text */
+  .btn-wedding-secondary {
+    @apply btn-wedding bg-[var(--w-bg)] text-[var(--w-text)] border border-[var(--w-accent)];
+    @apply hover:bg-sage-50/40 hover:border-[var(--w-accent)];
   }
   
-  /* Apple-style card */
+  /* Outline: transparent fill, sage border/text, fills on hover */
+  .btn-wedding-outline {
+    @apply btn-wedding bg-transparent text-[var(--w-text-secondary)] border border-[var(--w-accent)];
+    @apply hover:bg-[var(--w-accent)] hover:text-white;
+  }
+  
+  /* Ghost: no fill, subtle tint on hover */
+  .btn-wedding-ghost {
+    @apply btn-wedding bg-transparent text-[var(--w-text-secondary)];
+    @apply hover:bg-sage-50/40;
+  }
+
+  /* Apple-style card — tonal ivory surface instead of stark white */
   .card-apple {
-    @apply bg-white rounded-2xl shadow-apple;
+    @apply bg-[var(--w-surface)] rounded-2xl border border-[var(--w-border)] shadow-apple;
     @apply transition-all duration-300;
     @apply hover:shadow-apple-lg hover:-translate-y-1;
   }
   
   /* Apple-style input */
   .input-apple {
-    @apply w-full px-4 py-3 rounded-xl border border-apple-gray-200;
-    @apply bg-white text-apple-gray-900;
-    @apply focus:outline-none focus:ring-2 focus:ring-apple-blue-500 focus:border-transparent;
+    @apply w-full px-4 py-3 rounded-xl border border-[var(--w-border)];
+    @apply bg-white text-[var(--w-text)];
+    @apply focus:outline-none focus:ring-2 focus:ring-[var(--w-rose-300)] focus:border-[var(--w-sage-400)];
     @apply transition-all duration-200;
   }
   
   /* Section container */
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Section header divider — thin sage hairline in place of flat color blocks */
+  .section-divider {
+    @apply mx-auto my-0 h-px w-24 bg-sage-300/60;
+  }
+  
+  /* Section surface — subtle ivory wash for feature bands */
+  .section-surface {
+    @apply bg-ivory-50 border-t border-ivory-200;
+  }
+  
+  /* Subtle two-stop ivory gradient for section heroes */
+  .surface-gradient {
+    @apply bg-gradient-to-b from-ivory-100 to-ivory-50;
+  }
+  
+  /* Section header anchor — heading with dusty-rose underline so modules read as distinct blocks */
+  .section-header {
+    @apply border-b-2 border-[var(--w-rose-300)] pb-2 mb-6 inline-block relative;
+  }
+
+  /* Small sage accent dot before a section heading — delicate modern marker */
+  .section-header::before {
+    content: "";
+    @apply absolute left-[calc(-1.5rem-2px)] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[var(--w-accent-dot)];
+  }
+
+  /* Subtle radial glow behind hero text — modern depth without new hues */
+  .hero-glow {
+    @apply absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,var(--w-glow)_0%,transparent_70%)];
+  }
+  
+  /* Darker hero overlay — white text stays legible over any background image */
+  .hero-overlay {
+    @apply bg-gradient-to-b from-sage-900/30 via-sage-950/60 to-sage-950/80 backdrop-blur-sm;
+  }
+  
+  /* Darker contact overlay — white text stays legible over background image */
+  .contact-overlay {
+    @apply bg-[var(--w-dark-overlay)] backdrop-blur-sm;
   }
   
   /* Smooth scroll */
@@ -152,11 +265,6 @@
 
   /* Event details */
   .event-details {
-    page-break-inside: avoid;
-  }
-
-  /* Timeline */
-  .timeline-item {
     page-break-inside: avoid;
   }
 }

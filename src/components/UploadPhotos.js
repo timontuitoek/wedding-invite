@@ -7,12 +7,19 @@ import Button from './ui/Button';
 function UploadPhotos() {
   const [files, setFiles] = useState([]);
   const [previews, setPreviews] = useState([]);
-  const [message, setMessage] = useState('');
+  const [toast, setToast] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef(null);
+  const toastTimeoutRef = useRef(null);
   const navigate = useNavigate();
+
+  const showToast = (type, text) => {
+    if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
+    setToast({ type, text });
+    toastTimeoutRef.current = setTimeout(() => setToast(null), 3000);
+  };
 
   // Handle file selection
   const handleFileChange = (selectedFiles) => {
@@ -102,12 +109,11 @@ function UploadPhotos() {
   // Handle file upload
   const handleUpload = async () => {
     if (files.length === 0) {
-      setMessage('Please select at least one file to upload.');
+      showToast('error', 'Please select at least one file to upload.');
       return;
     }
 
     setUploading(true);
-    setMessage('');
     const formData = new FormData();
     files.forEach((file) => formData.append('images', file));
 
@@ -122,30 +128,30 @@ function UploadPhotos() {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        setMessage('Files uploaded successfully!');
+        showToast('success', 'Files uploaded successfully!');
         setTimeout(() => {
-          navigate('/gallery');
+          navigate('/');
         }, 2000);
       } else {
-        setMessage(result.message || 'Failed to upload files.');
+        showToast('error', result.message || 'Failed to upload files.');
       }
     } catch (error) {
       console.error('Error during upload:', error);
-      setMessage('An unexpected error occurred.');
+      showToast('error', 'An unexpected error occurred.');
     } finally {
       setUploading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-apple-gray-50 pt-24 pb-20">
+    <div className="min-h-screen bg-ivory-50 pt-28 pb-26">
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-title font-semibold text-apple-gray-900 mb-4">
+          <h1 className="section-header text-4xl sm:text-title font-semibold text-sage-900">
             {siteConfig.uploadPhotos?.title || 'Upload Your Photos'}
           </h1>
-          <p className="text-lg text-apple-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-sage-600 max-w-2xl mx-auto">
             {siteConfig.uploadPhotos?.subtitle || 'Share your favorite moments from our special day!'}
           </p>
         </div>
@@ -153,7 +159,7 @@ function UploadPhotos() {
         {/* Drag and Drop Area */}
         <Card
           className={`p-12 mb-8 transition-all ${
-            isDragging ? 'border-2 border-apple-blue-500 bg-apple-blue-50' : 'border-2 border-dashed border-apple-gray-300'
+            isDragging ? 'border-2 border-[var(--w-accent)] bg-[var(--w-bg)]' : 'border-2 border-dashed border-[var(--w-border)]'
           }`}
           onDragEnter={handleDragEnter}
           onDragOver={handleDragOver}
@@ -162,10 +168,10 @@ function UploadPhotos() {
         >
           <div className="text-center">
             <div className="text-6xl mb-4">📸</div>
-            <h3 className="text-xl font-semibold text-apple-gray-900 mb-2">
+            <h3 className="text-xl font-semibold text-sage-900 mb-2">
               {isDragging ? 'Drop files here' : 'Drag & drop photos here'}
             </h3>
-            <p className="text-apple-gray-600 mb-6">or</p>
+            <p className="text-sage-600 mb-6">or</p>
             <input
               ref={fileInputRef}
               type="file"
@@ -181,7 +187,7 @@ function UploadPhotos() {
             >
               Choose Files
             </Button>
-            <p className="text-sm text-apple-gray-500 mt-4">
+            <p className="text-sm text-sage-600 mt-4">
               Supported: JPEG, PNG, WebP (Max {siteConfig.uploadPhotos?.maxFileSize || 10}MB per file)
             </p>
           </div>
@@ -190,7 +196,7 @@ function UploadPhotos() {
         {/* File Previews */}
         {previews.length > 0 && (
           <div className="mb-8">
-            <h2 className="text-xl font-semibold text-apple-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-sage-900 mb-4">
               Selected Photos ({previews.length})
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -203,14 +209,14 @@ function UploadPhotos() {
                   />
                   <button
                     onClick={() => removeFile(index)}
-                    className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute top-2 right-2 bg-[var(--w-highlight-bg)] text-[var(--w-highlight-text)] rounded-full p-1 opacity-0 group-hover:opacity-100 hover:bg-[var(--w-rose-200)] transition-opacity"
                     aria-label="Remove file"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
-                  <p className="p-2 text-xs text-apple-gray-600 truncate">{preview.file.name}</p>
+                  <p className="p-2 text-xs text-sage-600 truncate">{preview.file.name}</p>
                 </Card>
               ))}
             </div>
@@ -232,28 +238,27 @@ function UploadPhotos() {
 
             {uploading && (
               <div className="max-w-md mx-auto">
-                <div className="w-full bg-apple-gray-200 rounded-full h-3 mb-2">
+                <div className="w-full bg-ivory-200 rounded-full h-3 mb-2">
                   <div
-                    className="bg-apple-blue-500 h-3 rounded-full transition-all duration-300"
+                    className="bg-[var(--w-accent)] h-3 rounded-full transition-all duration-300"
                     style={{ width: `${progress}%` }}
                   />
                 </div>
-                <p className="text-sm text-apple-gray-600">{progress}% complete</p>
+                <p className="text-sm text-sage-600">{progress}% complete</p>
               </div>
             )}
           </div>
         )}
 
-        {/* Status Message */}
-        {message && (
+        {/* Toast Notification */}
+        {toast && (
           <div
-            className={`mt-6 p-4 rounded-xl text-center ${
-              message.includes('successfully')
-                ? 'bg-green-50 text-green-700'
-                : 'bg-red-50 text-red-700'
+            className={`fixed top-20 right-4 z-[60] flex items-center gap-3 px-5 py-3 rounded-xl shadow-apple animate-fade-in ${
+              toast.type === 'success' ? 'bg-[var(--w-accent)] text-white' : 'bg-[var(--w-rose-800)] text-white'
             }`}
+            role="status"
           >
-            {message}
+            <span className="text-sm font-medium">{toast.text}</span>
           </div>
         )}
       </div>
