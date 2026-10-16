@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import siteConfig from '../siteConfig';
 import Card from './ui/Card';
-import Button from './ui/Button';
 
 function Travel() {
   const { hotels = [], transportation = {}, localAttractions = [], maps = {} } = siteConfig.travel || {};
