@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import siteConfig from '../siteConfig';
+import { useIntro } from '../contexts/IntroContext';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { isIntroVisible, replayHome } = useIntro();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +51,10 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      aria-hidden={isIntroVisible}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isIntroVisible ? 'opacity-0 pointer-events-none' : 'opacity-100'
+      } ${
         scrolled
           ? 'bg-[var(--w-bg)]/98 backdrop-blur-apple shadow-apple border-b border-[var(--w-border)]'
           : 'bg-[var(--w-dark)] backdrop-blur-sm'
@@ -60,6 +65,11 @@ function Navbar() {
           {/* Logo / Home button */}
           <Link
             to="/"
+            onClick={(event) => {
+              event.preventDefault();
+              setIsOpen(false);
+              replayHome();
+            }}
             aria-label="Wedding logo - Home"
             className="block w-11 h-11 rounded-lg overflow-hidden transition-all duration-200 hover:opacity-80 hover:scale-105 active:scale-95"
           >

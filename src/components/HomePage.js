@@ -1,12 +1,38 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import siteConfig from '../siteConfig';
-import Countdown from './ui/Countdown';
+import SplashIntro from './SplashIntro';
 import Card from './ui/Card';
-import Button from './ui/Button';
-import ShareButtons from './ui/ShareButtons';
+import { useIntro } from '../contexts/IntroContext';
 
 function HomePage() {
+  const { replayKey, isIntroVisible, setIntroVisible } = useIntro();
+
+  const completeIntro = useCallback(() => {
+    setIntroVisible(false);
+  }, [setIntroVisible]);
+
+  useEffect(() => {
+    setIntroVisible(true);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+
+    return () => {
+      setIntroVisible(false);
+      document.body.style.overflow = '';
+    };
+  }, [replayKey, setIntroVisible]);
+
+  useEffect(() => {
+    if (!isIntroVisible) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isIntroVisible]);
+
   // Get enabled features for quick navigation cards
   const getQuickNavCards = () => {
     const cards = [];
@@ -33,49 +59,51 @@ function HomePage() {
   };
 
   const quickNavCards = getQuickNavCards();
+  const weddingDate = new Date(siteConfig.wedding.date).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
 
   return (
     <div className="min-h-screen">
+      {isIntroVisible && (
+        <SplashIntro
+          replayKey={replayKey}
+          onComplete={completeIntro}
+        />
+      )}
       {/* Hero Section */}
-      <div
-        className="relative w-full h-screen bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${siteConfig.homepage.backgroundImage})` }}
-      >
-        <div className="absolute inset-0 hero-overlay" />
-        <div className="absolute inset-0 -z-10 hero-glow" />
-        <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 sm:px-8 max-w-4xl">
-          <h1 className="text-5xl sm:text-display-sm lg:text-display font-bold mb-6 animate-fade-in drop-shadow-lg">
-            {siteConfig.homepage.title}
-          </h1>
-          <p className="text-xl sm:text-2xl mb-12 max-w-2xl text-white animate-slide-up">
-            {siteConfig.homepage.subtitle}
+      <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-sage-950">
+        <img
+          src={`${process.env.PUBLIC_URL}/Beige%20and%20Blue%20Floral%20Wedding%20Logo.png`}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-35"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-sage-950/65 via-sage-900/75 to-sage-950/95" />
+        <div className="relative z-10 flex max-w-4xl flex-col items-center justify-center px-4 text-center text-white sm:px-8">
+          <img
+            src={`${process.env.PUBLIC_URL}/Beige%20and%20Blue%20Floral%20Wedding%20Logo.png`}
+            alt="Chela and Josiah's wedding logo"
+            width={2000}
+            height={2000}
+            className={`mb-8 w-40 rounded-full object-cover shadow-apple-xl transition-all duration-700 sm:w-52 ${
+              isIntroVisible ? 'scale-90 opacity-0' : 'scale-100 opacity-100'
+            }`}
+          />
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.35em] text-rose-200 sm:text-base">
+            We are getting married
           </p>
-
-          {/* Countdown Timer */}
-          {siteConfig.homepage.showCountdown && siteConfig.wedding?.date && (
-            <div className="mb-12 animate-scale-in">
-              <p className="text-lg mb-4 text-white/80">Counting down to our special day</p>
-              <Countdown targetDate={siteConfig.wedding.date} />
-            </div>
-          )}
-
-          {/* CTA Button */}
-          <div className="animate-scale-in mb-8">
-            <Link to="/upload-photos">
-              <Button variant="primary" size="lg">
-                {siteConfig.homepage.ctaButton}
-              </Button>
-            </Link>
-          </div>
-
-          {/* Share Buttons */}
-          <div className="animate-fade-in">
-            <ShareButtons
-              title={siteConfig.homepage.title}
-              description={siteConfig.homepage.subtitle}
-              className="justify-center"
-            />
-          </div>
+          <h1 className="text-5xl font-semibold tracking-tight drop-shadow-lg sm:text-display-sm lg:text-display">
+            {siteConfig.couple.name1} <span className="text-rose-300">&amp;</span> {siteConfig.couple.name2}
+          </h1>
+          <p className="mt-6 text-2xl font-medium text-white sm:text-3xl">
+            {weddingDate}
+          </p>
+          <p className="mt-4 max-w-2xl text-base text-ivory-100 sm:text-lg">
+            {siteConfig.wedding.location}
+          </p>
         </div>
 
         {/* Scroll Indicator */}

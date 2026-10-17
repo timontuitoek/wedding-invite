@@ -166,6 +166,29 @@
   .hero-overlay {
     @apply bg-gradient-to-b from-sage-900/30 via-sage-950/60 to-sage-950/80 backdrop-blur-sm;
   }
+
+  .splash-intro {
+    @apply fixed inset-0 z-[100] flex items-center justify-center bg-ivory-100;
+    @apply transition-opacity duration-[550ms] ease-out;
+  }
+
+  .splash-intro-visible {
+    opacity: 1;
+  }
+
+  .splash-intro-exiting {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .splash-intro-logo {
+    @apply w-[58vw] max-w-[360px] min-w-[180px] h-auto;
+    animation: splashLogoIn 450ms ease-out both;
+  }
+
+  .splash-intro-exiting .splash-intro-logo {
+    animation: splashLogoOut 550ms ease-out both;
+  }
   
   /* Darker contact overlay — white text stays legible over background image */
   .contact-overlay {
@@ -175,6 +198,40 @@
   /* Smooth scroll */
   html {
     scroll-behavior: smooth;
+  }
+
+  @keyframes splashLogoIn {
+    from {
+      opacity: 0;
+      transform: scale(0.94);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes splashLogoOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(1.04);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .splash-intro,
+    .splash-intro-logo {
+      animation: none;
+      transition-duration: 150ms;
+    }
+
+    .splash-intro-exiting .splash-intro-logo {
+      animation: none;
+    }
   }
 }
 

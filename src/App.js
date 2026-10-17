@@ -4,6 +4,7 @@ import siteConfig from './siteConfig';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
+import { IntroProvider } from './contexts/IntroContext';
 
 // Lazy load components for better performance
 const OurStory = lazy(() => import('./components/OurStory'));
@@ -60,16 +61,18 @@ function App() {
 
   return (
     <Router>
-      <div className="App flex flex-col min-h-screen bg-ivory-50">
-        <Navbar />
-        <div className="flex-grow">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            {getRoutes()}
-          </Routes>
+      <IntroProvider>
+        <div className="App flex flex-col min-h-screen bg-ivory-50">
+          <Navbar />
+          <div className="flex-grow">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              {getRoutes()}
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </IntroProvider>
     </Router>
   );
 }
