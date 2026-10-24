@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Function to set a custom favicon
 const setFavicon = (faviconPath) => {
   const link = document.querySelector("link[rel~='icon']");
   if (!link) {
@@ -17,8 +16,7 @@ const setFavicon = (faviconPath) => {
   }
 };
 
-// Set your custom favicon here
-setFavicon('/images/MK.png'); // The path relative to the public directory
+setFavicon(`${process.env.PUBLIC_URL}/Beige%20and%20Blue%20Floral%20Wedding%20Logo.png`);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

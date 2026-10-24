@@ -3,17 +3,17 @@
   "name": "Wedding Invite",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "Beige and Blue Floral Wedding Logo.png",
+      "sizes": "2000x2000",
+      "type": "image/png"
     },
     {
-      "src": "MK.png",
+      "src": "Beige and Blue Floral Wedding Logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "MK.png",
+      "src": "Beige and Blue Floral Wedding Logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

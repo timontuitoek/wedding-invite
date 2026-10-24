@@ -91,7 +91,7 @@ export const christianWeddingExample = {
       },
       {
         title: "Are children welcome?",
-        content: "While we love your little ones, this will be an adults-only celebration. We appreciate your understanding.",
+        content: "Yes the little ones and people of all ages are welcomed",
       },
       {
         title: "Will there be a bar?",
@@ -135,4 +135,3 @@ export const christianWeddingExample = {
     thankYouMessage: "Thank you for your generous gifts and for celebrating with us!",
   },
 };
-

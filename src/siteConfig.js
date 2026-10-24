@@ -156,16 +156,18 @@ const siteConfig = {
         description: "Our Amazon registry",
       },
       {
-        name: "Target",
-        url: "https://www.target.com/wedding-registry",
-        description: "Our Target registry",
+        name: "Contributions towards wedding day",
+        description: "Help us with the costs of celebrating our wedding day.",
       },
     ],
     cashFunds: [
       {
-        name: "Honeymoon Fund",
-        description: "Help us create unforgettable memories",
-        url: "https://example.com/honeymoon-fund",
+        name: "Cash Fund",
+        description: "If you would like to contribute in cash, please use either phone number below.",
+        phoneNumbers: [
+          { name: "Josiah", number: "+254715552779" },
+          { name: "Chela", number: "+254119012680" },
+        ],
       },
     ],
     thankYouMessage: "Thank you for your generous gifts!",
@@ -329,7 +331,7 @@ const siteConfig = {
     questions: [
       {
         title: "What should I wear?",
-        content: "Semi-formal attire is requested. Please avoid white.",
+        content: "Any semi-formal attire is requested",
       },
       {
         title: "Can I bring a plus one?",
@@ -345,7 +347,7 @@ const siteConfig = {
       },
       {
         title: "Are children welcome?",
-        content: "While we love your little ones, this will be an adults-only celebration.",
+        content: "Yes the little ones and people of all ages are welcomed",
       },
     ],
   },

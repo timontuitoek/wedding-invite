@@ -214,8 +214,14 @@ function EventPage() {
               </h2>
               <p className="text-center text-sage-600 mb-2">For more info</p>
               <div className="text-center text-sage-700 mb-8 space-y-1">
-                <p><strong>Contact:</strong> 75268992</p>
-                <p><strong>RSVP:</strong> 75950123</p>
+                <p>
+                  <strong>Josiah:</strong>{' '}
+                  <a href="tel:+254715552779" className="underline">+254715552779</a>
+                </p>
+                <p>
+                  <strong>Chela:</strong>{' '}
+                  <a href="tel:+254119012680" className="underline">+254119012680</a>
+                </p>
                 <p><strong>Email:</strong> tuitoektimon@gmail.com</p>
               </div>
               <p className="text-center text-sage-600 mb-4">Kindly let us know if you'll be joining us.</p>

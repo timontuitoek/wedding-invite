@@ -169,9 +169,24 @@ function Registry() {
                   {fund.description && (
                     <p className="text-sage-600 mb-4">{fund.description}</p>
                   )}
-                  <a href={fund.url} target="_blank" rel="noopener noreferrer">
-                    <Button variant="secondary">Contribute</Button>
-                  </a>
+                  {fund.phoneNumbers?.length > 0 && (
+                    <div className="space-y-2">
+                      {fund.phoneNumbers.map((contact) => (
+                        <a
+                          key={contact.name}
+                          href={`tel:${contact.number}`}
+                          className="block text-sage-700 underline"
+                        >
+                          {contact.name}: {contact.number}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                  {fund.url && (
+                    <a href={fund.url} target="_blank" rel="noopener noreferrer">
+                      <Button variant="secondary">Contribute</Button>
+                    </a>
+                  )}
                 </Card>
               ))}
             </div>
@@ -266,4 +281,3 @@ function Registry() {
 }
 
 export default Registry;
-
