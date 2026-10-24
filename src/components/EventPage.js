@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import siteConfig from '../siteConfig';
 import Card from './ui/Card';
 
-function EventPage() {
+function EventPage({ embedded = false }) {
   const [openEvent, setOpenEvent] = useState(null);
 
   const events = siteConfig.events.events;
@@ -90,7 +90,7 @@ function EventPage() {
   return (
     <>
       {/* Main Content */}
-      <div className="min-h-screen bg-ivory-50 pt-28 pb-26">
+      <div id={embedded ? 'events' : undefined} className={`min-h-screen bg-ivory-50 ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}>
         <div className="section-container">
           {/* Title Section */}
           <div className="text-center mb-12">

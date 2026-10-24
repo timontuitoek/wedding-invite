@@ -4,7 +4,7 @@ import siteConfig from '../siteConfig';
 import Card from './ui/Card';
 import Button from './ui/Button';
 
-function UploadPhotos() {
+function UploadPhotos({ embedded = false }) {
   const [files, setFiles] = useState([]);
   const [previews, setPreviews] = useState([]);
   const [toast, setToast] = useState(null);
@@ -144,7 +144,7 @@ function UploadPhotos() {
   };
 
   return (
-    <div className="min-h-screen bg-ivory-50 pt-28 pb-26">
+    <div id={embedded ? 'upload-photos' : undefined} className={`min-h-screen bg-ivory-50 ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}>
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-12">

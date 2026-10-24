@@ -5,7 +5,7 @@ import Button from './ui/Button';
 import Modal from './ui/Modal';
 import Input from './ui/Input';
 
-function Registry() {
+function Gifts({ embedded = false }) {
   const { registries = [], cashFunds = [], thankYouMessage } = siteConfig.registry || {};
   const [reservations, setReservations] = useState({});
   const [showReserveModal, setShowReserveModal] = useState(false);
@@ -92,12 +92,12 @@ function Registry() {
   };
 
   return (
-    <div className="min-h-screen bg-ivory-50 pt-28 pb-26">
+    <div id={embedded ? 'gifts' : undefined} className={`min-h-screen bg-ivory-50 ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}>
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="section-header text-4xl sm:text-title font-semibold text-sage-900">
-            {siteConfig.registry?.title || 'Wedding Registry'}
+            {siteConfig.registry?.title || 'Gifts'}
           </h1>
           <p className="text-lg text-sage-600 max-w-2xl mx-auto">
             {siteConfig.registry?.subtitle || "Your presence is the greatest gift, but if you'd like to honor us with something special..."}
@@ -202,7 +202,7 @@ function Registry() {
 
         {registries.length === 0 && cashFunds.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-sage-600 text-lg">Registry information coming soon!</p>
+            <p className="text-sage-600 text-lg">Gift information coming soon!</p>
           </div>
         )}
 
@@ -280,4 +280,4 @@ function Registry() {
   );
 }
 
-export default Registry;
+export default Gifts;

@@ -1,8 +1,9 @@
 import React, { useCallback, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import siteConfig from '../siteConfig';
 import SplashIntro from './SplashIntro';
-import Card from './ui/Card';
+import EventPage from './EventPage';
+import Gifts from './Gifts';
+import UploadPhotos from './UploadPhotos';
 import { useIntro } from '../contexts/IntroContext';
 
 function HomePage() {
@@ -33,32 +34,6 @@ function HomePage() {
     };
   }, [isIntroVisible]);
 
-  // Get enabled features for quick navigation cards
-  const getQuickNavCards = () => {
-    const cards = [];
-    const routes = {
-      ourStory: { path: '/our-story', icon: '📖' },
-      events: { path: '/events', icon: '📅' },
-      uploadPhotos: { path: '/upload-photos', icon: '⬆️' },
-      registry: { path: '/registry', icon: '🎁' },
-      travel: { path: '/travel', icon: '✈️' },
-      faq: { path: '/faq', icon: '❓' },
-    };
-
-    Object.entries(siteConfig.features).forEach(([key, feature]) => {
-      if (feature.enabled && key !== 'homepage' && routes[key]) {
-        cards.push({
-          ...routes[key],
-          label: feature.label,
-          key,
-        });
-      }
-    });
-
-    return cards.slice(0, 6); // Show max 6 cards
-  };
-
-  const quickNavCards = getQuickNavCards();
   const weddingDate = new Date(siteConfig.wedding.date).toLocaleDateString('en-GB', {
     day: 'numeric',
     month: 'long',
@@ -74,7 +49,7 @@ function HomePage() {
         />
       )}
       {/* Hero Section */}
-      <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-sage-950">
+      <div id="home" className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-sage-950 scroll-mt-20">
         <img
           src={`${process.env.PUBLIC_URL}/Beige%20and%20Blue%20Floral%20Wedding%20Logo.png`}
           alt=""
@@ -124,35 +99,9 @@ function HomePage() {
         </div>
       </div>
 
-      {/* Quick Navigation Cards */}
-      {quickNavCards.length > 0 && (
-        <section className="section-container py-26">
-          <div className="text-center mb-12">
-            <h2 className="section-header text-3xl sm:text-title font-semibold text-sage-900">
-              Explore Our Wedding
-            </h2>
-            <p className="text-sage-600 max-w-2xl mx-auto">
-              Discover all the details about our special day
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {quickNavCards.map((card) => (
-              <Link key={card.key} to={card.path}>
-                <Card className="p-6 text-center cursor-pointer h-full">
-                  <div className="text-4xl mb-4">{card.icon}</div>
-                  <h3 className="text-xl font-semibold text-sage-900 mb-2">
-                    {card.label}
-                  </h3>
-                  <p className="text-sage-600 text-sm">
-                    Click to explore
-                  </p>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
+      {siteConfig.features.events?.enabled && <EventPage embedded />}
+      {siteConfig.features.uploadPhotos?.enabled && <UploadPhotos embedded />}
+      {siteConfig.features.registry?.enabled && <Gifts embedded />}
     </div>
   );
 }

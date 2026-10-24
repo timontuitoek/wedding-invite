@@ -26,12 +26,12 @@ const siteConfig = {
   // All features are enabled by default - set to false to disable any feature
   features: {
     homepage: { enabled: true, label: "Home" },
-    ourStory: { enabled: true, label: "Our Story" },
     events: { enabled: true, label: "Events & RSVP" },
     uploadPhotos: { enabled: true, label: "Upload Photos" },
-    registry: { enabled: true, label: "Registry" },
+    registry: { enabled: true, label: "Gifts" },
     travel: { enabled: true, label: "Travel & Accommodation" },
     faq: { enabled: true, label: "FAQ" },
+    messageToCouple: { enabled: true, label: "Message to the Couple" },
   },
 
   // ============================================
@@ -146,7 +146,7 @@ const siteConfig = {
 
   // Registry/Gifts
   registry: {
-    title: "Wedding Registry",
+    title: "Gifts",
     subtitle: "Your presence is the greatest gift, but if you'd like to honor us with something special...",
     enableGiftTracking: true, // Enable gift reservation system
     registries: [
@@ -354,7 +354,7 @@ const siteConfig = {
 
   // Footer
   footer: {
-    tagline: "True love is the greatest adventure. Thank you for being a part of our journey!",
+    tagline: "Ecclesiastes 3:11 — He has made everything beautiful in its time.",
     contactEmail: "wedding@example.com", // Optional
     socialMedia: {
       instagram: "https://instagram.com/yourhandle", // Optional
@@ -364,10 +364,10 @@ const siteConfig = {
 
   // Navigation
   navigation: {
-    ourStoryLabel: "Our Story",
+    messageToCoupleLabel: "Message to the Couple",
     eventsLabel: "Events",
     uploadLabel: "Upload",
-    registryLabel: "Registry",
+    registryLabel: "Gifts",
     travelLabel: "Travel",
     faqLabel: "FAQ",
   },

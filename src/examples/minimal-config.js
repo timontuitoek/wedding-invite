@@ -9,12 +9,12 @@ export const minimalExample = {
   // Minimal feature set - only essential features enabled
   features: {
     homepage: { enabled: true, label: "Home" },
-    ourStory: { enabled: true, label: "Our Story" },
     events: { enabled: true, label: "Events & RSVP" },
     uploadPhotos: { enabled: false, label: "Upload Photos" },
-    registry: { enabled: false, label: "Registry" },
+    registry: { enabled: false, label: "Gifts" },
     travel: { enabled: false, label: "Travel & Accommodation" },
     faq: { enabled: false, label: "FAQ" },
+    messageToCouple: { enabled: true, label: "Message to the Couple" },
   },
 
   // Minimal events - just ceremony and reception
@@ -76,4 +76,3 @@ export const minimalExample = {
   },
 
 };
-

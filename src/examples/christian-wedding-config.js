@@ -106,7 +106,7 @@ export const christianWeddingExample = {
 
   // Registry suggestions for Christian weddings
   registry: {
-    title: "Wedding Registry",
+    title: "Gifts",
     subtitle: "Your presence is the greatest gift, but if you'd like to honor us...",
     registries: [
       {

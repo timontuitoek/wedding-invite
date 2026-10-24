@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import siteConfig from './siteConfig';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -7,12 +7,12 @@ import HomePage from './components/HomePage';
 import { IntroProvider } from './contexts/IntroContext';
 
 // Lazy load components for better performance
-const OurStory = lazy(() => import('./components/OurStory'));
 const EventPage = lazy(() => import('./components/EventPage'));
 const UploadPhotos = lazy(() => import('./components/UploadPhotos'));
-const Registry = lazy(() => import('./components/Registry'));
+const Gifts = lazy(() => import('./components/Gifts'));
 const Travel = lazy(() => import('./components/Travel'));
 const FAQ = lazy(() => import('./components/FAQ'));
+const MessageToCouple = lazy(() => import('./components/MessageToCouple'));
 
 // Loading component
 const Loading = () => (
@@ -26,12 +26,12 @@ const Loading = () => (
 
 // Route configuration
 const routeMap = {
-  ourStory: { path: '/our-story', Component: OurStory },
   events: { path: '/events', Component: EventPage },
   uploadPhotos: { path: '/upload-photos', Component: UploadPhotos },
-  registry: { path: '/registry', Component: Registry },
+  registry: { path: '/gifts', Component: Gifts },
   travel: { path: '/travel', Component: Travel },
   faq: { path: '/faq', Component: FAQ },
+  messageToCouple: { path: '/message-to-couple', Component: MessageToCouple },
 };
 
 function App() {
@@ -68,6 +68,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               {getRoutes()}
+              <Route path="/registry" element={<Navigate to="/gifts" replace />} />
             </Routes>
           </div>
           <Footer />

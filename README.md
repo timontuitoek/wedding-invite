@@ -8,8 +8,8 @@ A beautiful, fully customizable wedding website template built with React and Ta
 - 📸 **Photo Upload & Gallery** - Guests can upload photos and view them in the gallery (stored in Google Drive - FREE, automatically displayed)
 - 💌 **Blessings & Messages** - Collect heartfelt messages (stored in Google Sheets - FREE)
 - 📅 **Event Management & RSVP** - Display multiple events with RSVP functionality
-- 📖 **Our Story** - Share your love story with customizable sections
-- 🎁 **Registry** - Link to gift registries and cash funds
+- 💌 **Message to the Couple** - A space for a future message form
+- 🎁 **Gifts** - Gift ideas and cash funds
 - ✈️ **Travel & Accommodation** - Share hotel info and travel details
 - ❓ **FAQ** - Answer common questions
 - ⏱️ **Timeline** - Show relationship milestones
@@ -22,8 +22,8 @@ A beautiful, fully customizable wedding website template built with React and Ta
 ### Homepage
 ![Homepage](screenshots/homepage.png)
 
-### Our Story
-![Our Story](screenshots/our-story.png)
+### Message to the Couple
+The message module is reserved for a future Google Form.
 
 ### Events & RSVP
 ![Events & RSVP](screenshots/events.png)
@@ -37,8 +37,8 @@ A beautiful, fully customizable wedding website template built with React and Ta
 ### Blessings
 ![Blessings](screenshots/blessings.png)
 
-### Registry
-![Registry](screenshots/registry.png)
+### Gifts
+![Gifts](screenshots/registry.png)
 
 ### Travel & Accommodation
 ![Travel & Accommodation](screenshots/travel.png)
@@ -89,12 +89,12 @@ All features are **enabled by default**. To disable any feature, edit `src/siteC
 ```javascript
 features: {
   homepage: { enabled: true, label: "Home" },
-  ourStory: { enabled: true, label: "Our Story" },
+  messageToCouple: { enabled: true, label: "Message to the Couple" },
   events: { enabled: true, label: "Events & RSVP" },
   photoGallery: { enabled: true, label: "Photo Gallery" },
   uploadPhotos: { enabled: true, label: "Upload Photos" },
   blessings: { enabled: true, label: "Blessings" },
-  registry: { enabled: true, label: "Registry" },
+  registry: { enabled: true, label: "Gifts" },
   travel: { enabled: true, label: "Travel & Accommodation" },
   faq: { enabled: true, label: "FAQ" },
   timeline: { enabled: true, label: "Timeline" },
@@ -330,9 +330,9 @@ All customizable content is in `src/siteConfig.js`. Edit this file to personaliz
 - **Couple Information:** Names, display name, photos
 - **Wedding Date:** For countdown timer
 - **Homepage:** Title, subtitle, call-to-action
-- **Our Story:** Partner stories, how we met, proposal, milestones
+- **Message to the Couple:** Future guest message form
 - **Events:** Event details, dates, venues, maps, dress codes
-- **Registry:** Gift registries and cash funds
+- **Gifts:** Gift ideas and cash funds
 - **Travel:** Hotels, transportation, local attractions
 - **FAQ:** Common questions and answers
 - **Timeline:** Relationship milestones

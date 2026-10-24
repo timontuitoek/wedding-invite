@@ -6,6 +6,7 @@ import { useIntro } from '../contexts/IntroContext';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const location = useLocation();
   const { isIntroVisible, replayHome } = useIntro();
 
@@ -17,24 +18,57 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      setActiveSection('');
+      return undefined;
+    }
+
+    const sections = ['home', 'events', 'upload-photos', 'gifts'];
+    const updateActiveSection = () => {
+      const marker = window.scrollY + 120;
+      let currentSection = 'home';
+
+      sections.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element && element.offsetTop <= marker) currentSection = id;
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, [location.pathname]);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const scrollToSection = (sectionId) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   // Generate navigation links based on enabled features
   const getNavLinks = () => {
     const links = [];
     const routes = {
-      ourStory: '/our-story',
+      homepage: '/',
       events: '/events',
       uploadPhotos: '/upload-photos',
-      registry: '/registry',
+      registry: '/gifts',
       travel: '/travel',
       faq: '/faq',
+      messageToCouple: '/message-to-couple',
     };
 
     Object.entries(siteConfig.features).forEach(([key, feature]) => {
-      if (feature.enabled && key !== 'homepage' && routes[key]) {
+      if (feature.enabled && routes[key]) {
         links.push({
           path: routes[key],
           label: feature.label,
@@ -118,12 +152,22 @@ function Navbar() {
 
           {/* Links for Large Screens */}
           <div className={`hidden lg:flex lg:items-center lg:space-x-8`}>
-            {navLinks.map((link) => (
-              <Link
+            {navLinks.map((link) => {
+              const continuous = location.pathname === '/' && ['homepage', 'events', 'registry', 'uploadPhotos'].includes(link.key);
+              const sectionId = link.key === 'homepage' ? 'home' : link.key === 'events' ? 'events' : link.key === 'registry' ? 'gifts' : link.key === 'uploadPhotos' ? 'upload-photos' : null;
+              const active = continuous ? activeSection === (link.key === 'homepage' ? 'home' : link.key === 'events' ? 'events' : link.key === 'registry' ? 'gifts' : 'upload-photos') : isActive(link.path);
+              return <Link
                 key={link.key}
                 to={link.path}
+                onClick={(event) => {
+                  if (continuous) {
+                    event.preventDefault();
+                    scrollToSection(sectionId);
+                    setIsOpen(false);
+                  }
+                }}
                 className={`text-sm font-medium transition-all duration-200 px-2 py-1 ${
-                  isActive(link.path)
+                  active
                     ? scrolled
                       ? 'text-rose-800 border-b-2 border-rose-300'
                       : 'text-white border-b-2 border-rose-300/60'
@@ -133,8 +177,8 @@ function Navbar() {
                 }`}
               >
                 {link.label}
-              </Link>
-            ))}
+              </Link>;
+            })}
           </div>
         </div>
 
@@ -145,13 +189,21 @@ function Navbar() {
               scrolled ? 'text-sage-900' : 'text-white'
             }`}
           >
-            {navLinks.map((link) => (
-              <Link
+            {navLinks.map((link) => {
+              const continuous = location.pathname === '/' && ['homepage', 'events', 'registry', 'uploadPhotos'].includes(link.key);
+              const active = continuous ? activeSection === (link.key === 'homepage' ? 'home' : link.key === 'events' ? 'events' : link.key === 'registry' ? 'gifts' : 'upload-photos') : isActive(link.path);
+              return <Link
                 key={link.key}
                 to={link.path}
-                onClick={toggleMenu}
+                onClick={(event) => {
+                  if (continuous) {
+                    event.preventDefault();
+                    scrollToSection(link.key === 'homepage' ? 'home' : link.key === 'events' ? 'events' : link.key === 'registry' ? 'gifts' : 'upload-photos');
+                  }
+                  toggleMenu();
+                }}
                 className={`block py-2 px-4 rounded-lg transition-colors ${
-                  isActive(link.path)
+                  active
                     ? scrolled
                       ? 'bg-rose-50 text-rose-800 font-medium'
                       : 'bg-white/20 text-white font-medium'
@@ -161,8 +213,8 @@ function Navbar() {
                 }`}
               >
                 {link.label}
-              </Link>
-            ))}
+              </Link>;
+            })}
           </div>
         )}
       </div>

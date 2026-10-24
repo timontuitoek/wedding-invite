@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="">
+    <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="Update wedding details and contact information in configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/MK.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Registry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UploadPhotos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UploadPhotos.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/examples/christian-wedding-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/christian-wedding-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/examples/minimal-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/minimal-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/siteConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/siteConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,11 +200,24 @@
       <workItem from="1792081246494" duration="4552000" />
       <workItem from="1792241611623" duration="4830000" />
       <workItem from="1792828484221" duration="2250000" />
-      <workItem from="1792830878969" duration="5017000" />
+      <workItem from="1792830878969" duration="8901000" />
     </task>
+    <task id="LOCAL-00001" summary="Update wedding details and contact information in configuration">
+      <option name="closed" value="true" />
+      <created>1792836404424</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1792836404426</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update wedding details and contact information in configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update wedding details and contact information in configuration" />
   </component>
 </project>
