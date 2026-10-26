@@ -169,8 +169,17 @@ function Gifts({ embedded = false }) {
                   {fund.description && (
                     <p className="text-sage-600 mb-4">{fund.description}</p>
                   )}
+                  {fund.paybill && (
+                    <div className="text-left space-y-1 mb-5 text-sage-700">
+                      <h4 className="font-semibold text-sage-900">Preferred option: M-Pesa Paybill</h4>
+                      <p>Paybill: {fund.paybill.number}</p>
+                      <p>Account Number: {fund.paybill.accountNumber}</p>
+                      <p>Account Name/Reference: {fund.paybill.accountName}</p>
+                    </div>
+                  )}
                   {fund.phoneNumbers?.length > 0 && (
-                    <div className="space-y-2">
+                    <div className="text-left space-y-2 mb-5">
+                      <h4 className="font-semibold text-sage-900">Or send directly to M-Pesa</h4>
                       {fund.phoneNumbers.map((contact) => (
                         <a
                           key={contact.name}
@@ -180,6 +189,17 @@ function Gifts({ embedded = false }) {
                           {contact.name}: {contact.number}
                         </a>
                       ))}
+                    </div>
+                  )}
+                  {fund.internationalBank && (
+                    <div className="text-left space-y-1 text-sage-700">
+                      <h4 className="font-semibold text-sage-900">
+                        For our international friends
+                      </h4>
+                      <p>Bank Name: {fund.internationalBank.bankName}</p>
+                      <p>Account Name: {fund.internationalBank.accountName}</p>
+                      <p>Sort Code: {fund.internationalBank.sortCode}</p>
+                      <p>Account Number: {fund.internationalBank.accountNumber}</p>
                     </div>
                   )}
                   {fund.url && (

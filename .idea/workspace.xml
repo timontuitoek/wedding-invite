@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="Update wedding details and contact information in configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EventPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Registry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UploadPhotos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UploadPhotos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/examples/christian-wedding-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/christian-wedding-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/examples/minimal-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/minimal-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gifts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Gifts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/siteConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/siteConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +20,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="81" />
+    <option name="cachedIndexableFilesCount" value="80" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -201,6 +193,8 @@
       <workItem from="1792241611623" duration="4830000" />
       <workItem from="1792828484221" duration="2250000" />
       <workItem from="1792830878969" duration="8901000" />
+      <workItem from="1793006641022" duration="836000" />
+      <workItem from="1793011198298" duration="1677000" />
     </task>
     <task id="LOCAL-00001" summary="Update wedding details and contact information in configuration">
       <option name="closed" value="true" />

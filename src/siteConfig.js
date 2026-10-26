@@ -162,12 +162,24 @@ const siteConfig = {
     ],
     cashFunds: [
       {
-        name: "Cash Fund",
-        description: "If you would like to contribute in cash, please use either phone number below.",
+        name: "Cash Gift",
+        description: "If you would like to contribute, please use one of the options below.",
+        paybill: {
+          number: "400222",
+          accountNumber: "1208947#[ENTER YOUR NAME]",
+          accountName: "JOSIAH / CHELA",
+        },
         phoneNumbers: [
           { name: "Josiah", number: "+254715552779" },
-          { name: "Chela", number: "+254119012680" },
+          { name: "Dorcas", number: "+254119012680" },
         ],
+        internationalBank: {
+          name: "UK Bank",
+          bankName: "MONZO",
+          accountName: "Dorcas Tuitoek",
+          sortCode: "04-00-03",
+          accountNumber: "30656102",
+        },
       },
     ],
     thankYouMessage: "Thank you for your generous gifts!",
