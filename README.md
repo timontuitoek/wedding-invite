@@ -8,7 +8,6 @@ A beautiful, fully customizable wedding website template built with React and Ta
 - 📸 **Photo Upload & Gallery** - Guests can upload photos and view them in the gallery (stored in Google Drive - FREE, automatically displayed)
 - 💌 **Blessings & Messages** - Collect heartfelt messages (stored in Google Sheets - FREE)
 - 📅 **Event Management & RSVP** - Display multiple events with RSVP functionality
-- 💌 **Message to the Couple** - A space for a future message form
 - 🎁 **Gifts** - Gift ideas and cash funds
 - ✈️ **Travel & Accommodation** - Share hotel info and travel details
 - ❓ **FAQ** - Answer common questions
@@ -21,9 +20,6 @@ A beautiful, fully customizable wedding website template built with React and Ta
 
 ### Homepage
 ![Homepage](screenshots/homepage.png)
-
-### Message to the Couple
-The message module is reserved for a future Google Form.
 
 ### Events & RSVP
 ![Events & RSVP](screenshots/events.png)
@@ -89,7 +85,6 @@ All features are **enabled by default**. To disable any feature, edit `src/siteC
 ```javascript
 features: {
   homepage: { enabled: true, label: "Home" },
-  messageToCouple: { enabled: true, label: "Message to the Couple" },
   events: { enabled: true, label: "Events & RSVP" },
   photoGallery: { enabled: true, label: "Photo Gallery" },
   uploadPhotos: { enabled: true, label: "Upload Photos" },
@@ -330,7 +325,6 @@ All customizable content is in `src/siteConfig.js`. Edit this file to personaliz
 - **Couple Information:** Names, display name, photos
 - **Wedding Date:** For countdown timer
 - **Homepage:** Title, subtitle, call-to-action
-- **Message to the Couple:** Future guest message form
 - **Events:** Event details, dates, venues, maps, dress codes
 - **Gifts:** Gift ideas and cash funds
 - **Travel:** Hotels, transportation, local attractions

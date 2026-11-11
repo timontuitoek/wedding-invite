@@ -3,7 +3,7 @@ import siteConfig from '../siteConfig';
 import Accordion from './ui/Accordion';
 import Input from './ui/Input';
 
-function FAQ() {
+function FAQ({ embedded = false }) {
   const [searchQuery, setSearchQuery] = useState('');
   const questions = siteConfig.faq?.questions || [];
 
@@ -13,7 +13,10 @@ function FAQ() {
   );
 
   return (
-    <div className="min-h-screen bg-ivory-50 pt-28 pb-26">
+    <div
+      id={embedded ? 'faq' : undefined}
+      className={`min-h-screen bg-ivory-50 ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}
+    >
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-12">
@@ -64,4 +67,3 @@ function FAQ() {
 }
 
 export default FAQ;
-

@@ -4,6 +4,8 @@ import SplashIntro from './SplashIntro';
 import EventPage from './EventPage';
 import Gifts from './Gifts';
 import UploadPhotos from './UploadPhotos';
+import Travel from './Travel';
+import FAQ from './FAQ';
 import { useIntro } from '../contexts/IntroContext';
 
 function HomePage() {
@@ -100,8 +102,10 @@ function HomePage() {
       </div>
 
       {siteConfig.features.events?.enabled && <EventPage embedded />}
-      {siteConfig.features.uploadPhotos?.enabled && <UploadPhotos embedded />}
       {siteConfig.features.registry?.enabled && <Gifts embedded />}
+      {siteConfig.features.uploadPhotos?.enabled && <UploadPhotos embedded />}
+      {siteConfig.features.travel?.enabled && <Travel embedded />}
+      {siteConfig.features.faq?.enabled && <FAQ embedded />}
     </div>
   );
 }

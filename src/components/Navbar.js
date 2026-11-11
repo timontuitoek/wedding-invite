@@ -24,7 +24,7 @@ function Navbar() {
       return undefined;
     }
 
-    const sections = ['home', 'events', 'upload-photos', 'gifts'];
+    const sections = ['home', 'events', 'upload-photos', 'gifts', 'travel', 'faq'];
     const updateActiveSection = () => {
       const marker = window.scrollY + 120;
       let currentSection = 'home';
@@ -64,7 +64,6 @@ function Navbar() {
       registry: '/gifts',
       travel: '/travel',
       faq: '/faq',
-      messageToCouple: '/message-to-couple',
     };
 
     Object.entries(siteConfig.features).forEach(([key, feature]) => {
@@ -153,9 +152,9 @@ function Navbar() {
           {/* Links for Large Screens */}
           <div className={`hidden lg:flex lg:items-center lg:space-x-8`}>
             {navLinks.map((link) => {
-              const continuous = location.pathname === '/' && ['homepage', 'events', 'registry', 'uploadPhotos'].includes(link.key);
-              const sectionId = link.key === 'homepage' ? 'home' : link.key === 'events' ? 'events' : link.key === 'registry' ? 'gifts' : link.key === 'uploadPhotos' ? 'upload-photos' : null;
-              const active = continuous ? activeSection === (link.key === 'homepage' ? 'home' : link.key === 'events' ? 'events' : link.key === 'registry' ? 'gifts' : 'upload-photos') : isActive(link.path);
+              const continuous = location.pathname === '/' && ['homepage', 'events', 'registry', 'uploadPhotos', 'travel', 'faq'].includes(link.key);
+              const sectionId = link.key === 'homepage' ? 'home' : link.key === 'events' ? 'events' : link.key === 'registry' ? 'gifts' : link.key === 'uploadPhotos' ? 'upload-photos' : link.key;
+              const active = continuous ? activeSection === sectionId : isActive(link.path);
               return <Link
                 key={link.key}
                 to={link.path}
@@ -190,15 +189,16 @@ function Navbar() {
             }`}
           >
             {navLinks.map((link) => {
-              const continuous = location.pathname === '/' && ['homepage', 'events', 'registry', 'uploadPhotos'].includes(link.key);
-              const active = continuous ? activeSection === (link.key === 'homepage' ? 'home' : link.key === 'events' ? 'events' : link.key === 'registry' ? 'gifts' : 'upload-photos') : isActive(link.path);
+              const continuous = location.pathname === '/' && ['homepage', 'events', 'registry', 'uploadPhotos', 'travel', 'faq'].includes(link.key);
+              const sectionId = link.key === 'homepage' ? 'home' : link.key === 'events' ? 'events' : link.key === 'registry' ? 'gifts' : link.key === 'uploadPhotos' ? 'upload-photos' : link.key;
+              const active = continuous ? activeSection === sectionId : isActive(link.path);
               return <Link
                 key={link.key}
                 to={link.path}
                 onClick={(event) => {
                   if (continuous) {
                     event.preventDefault();
-                    scrollToSection(link.key === 'homepage' ? 'home' : link.key === 'events' ? 'events' : link.key === 'registry' ? 'gifts' : 'upload-photos');
+                    scrollToSection(sectionId);
                   }
                   toggleMenu();
                 }}

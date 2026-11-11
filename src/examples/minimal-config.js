@@ -14,7 +14,6 @@ export const minimalExample = {
     registry: { enabled: false, label: "Gifts" },
     travel: { enabled: false, label: "Travel & Accommodation" },
     faq: { enabled: false, label: "FAQ" },
-    messageToCouple: { enabled: true, label: "Message to the Couple" },
   },
 
   // Minimal events - just ceremony and reception

@@ -27,11 +27,10 @@ const siteConfig = {
   features: {
     homepage: { enabled: true, label: "Home" },
     events: { enabled: true, label: "Events & RSVP" },
-    uploadPhotos: { enabled: true, label: "Upload Photos" },
     registry: { enabled: true, label: "Gifts" },
+    uploadPhotos: { enabled: true, label: "Upload Photos" },
     travel: { enabled: true, label: "Travel & Accommodation" },
     faq: { enabled: true, label: "FAQ" },
-    messageToCouple: { enabled: true, label: "Message to the Couple" },
   },
 
   // ============================================
@@ -149,17 +148,7 @@ const siteConfig = {
     title: "Gifts",
     subtitle: "Your presence is the greatest gift, but if you'd like to honor us with something special...",
     enableGiftTracking: true, // Enable gift reservation system
-    registries: [
-      {
-        name: "Amazon",
-        url: "https://www.amazon.com/wedding-registry",
-        description: "Our Amazon registry",
-      },
-      {
-        name: "Contributions towards wedding day",
-        description: "Help us with the costs of celebrating our wedding day.",
-      },
-    ],
+    registries: [],
     cashFunds: [
       {
         name: "Cash Gift",
@@ -376,7 +365,6 @@ const siteConfig = {
 
   // Navigation
   navigation: {
-    messageToCoupleLabel: "Message to the Couple",
     eventsLabel: "Events",
     uploadLabel: "Upload",
     registryLabel: "Gifts",

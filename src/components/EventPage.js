@@ -200,40 +200,22 @@ function EventPage({ embedded = false }) {
                         </button>
                       </div>
                     </div>
+
+                    <div className="mt-6 pt-6 border-t border-ivory-200 text-center">
+                      <p className="text-sage-600 mb-4">Kindly let us know if you'll be joining us.</p>
+                      <a
+                        href="https://forms.gle/21Uj3ux6xYosE1Qg9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-wedding-primary inline-block text-center"
+                      >
+                        RSVP Now
+                      </a>
+                    </div>
                   </div>
                 )}
               </Card>
             ))}
-          </div>
-
-          {/* RSVP Section */}
-          <div className="mt-16">
-            <Card className="max-w-4xl mx-auto p-8">
-              <h2 className="section-header text-3xl sm:text-4xl font-semibold text-sage-900 text-center">
-                Our Day
-              </h2>
-              <p className="text-center text-sage-600 mb-2">For more info</p>
-              <div className="text-center text-sage-700 mb-8 space-y-1">
-                <p>
-                  <strong>Josiah:</strong>{' '}
-                  <a href="tel:+254715552779" className="underline">+254715552779</a>
-                </p>
-                <p>
-                  <strong>Chela:</strong>{' '}
-                  <a href="tel:+254119012680" className="underline">+254119012680</a>
-                </p>
-                <p><strong>Email:</strong> tuitoektimon@gmail.com</p>
-              </div>
-              <p className="text-center text-sage-600 mb-4">Kindly let us know if you'll be joining us.</p>
-              <a
-                href="https://forms.gle/21Uj3ux6xYosE1Qg9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-wedding-primary inline-block text-center"
-              >
-                RSVP Now
-              </a>
-            </Card>
           </div>
         </div>
       </div>

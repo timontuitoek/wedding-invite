@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import siteConfig from '../siteConfig';
 import Card from './ui/Card';
 
-function Travel() {
+function Travel({ embedded = false }) {
   const { hotels = [], transportation = {}, localAttractions = [], maps = {} } = siteConfig.travel || {};
   const [weather, setWeather] = useState(null);
   const [weatherLoading, setWeatherLoading] = useState(false);
@@ -118,7 +118,10 @@ function Travel() {
   };
 
   return (
-    <div className="min-h-screen bg-ivory-50 pt-28 pb-26">
+    <div
+      id={embedded ? 'travel' : undefined}
+      className={`min-h-screen bg-ivory-50 ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}
+    >
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-16">
@@ -421,4 +424,3 @@ function Travel() {
 }
 
 export default Travel;
-

@@ -12,7 +12,6 @@ const UploadPhotos = lazy(() => import('./components/UploadPhotos'));
 const Gifts = lazy(() => import('./components/Gifts'));
 const Travel = lazy(() => import('./components/Travel'));
 const FAQ = lazy(() => import('./components/FAQ'));
-const MessageToCouple = lazy(() => import('./components/MessageToCouple'));
 
 // Loading component
 const Loading = () => (
@@ -31,7 +30,6 @@ const routeMap = {
   registry: { path: '/gifts', Component: Gifts },
   travel: { path: '/travel', Component: Travel },
   faq: { path: '/faq', Component: FAQ },
-  messageToCouple: { path: '/message-to-couple', Component: MessageToCouple },
 };
 
 function App() {
