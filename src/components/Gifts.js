@@ -92,13 +92,25 @@ function Gifts({ embedded = false }) {
   };
 
   return (
-    <div id={embedded ? 'gifts' : undefined} className={`min-h-screen bg-ivory-50 ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}>
+    <div id={embedded ? 'gifts' : undefined} className={`modern-section min-h-screen ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}>
       <div className="section-container">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="section-header text-4xl sm:text-title font-semibold text-sage-900">
-            {siteConfig.registry?.title || 'Gifts'}
-          </h1>
+        <div className="text-center mb-12">
+          <div className="flex justify-center items-center gap-4 mb-4">
+            <h1 className="section-header text-4xl sm:text-title font-semibold text-sage-900">
+              {siteConfig.registry?.title || 'Gifts'}
+            </h1>
+            <button
+              onClick={() => window.print()}
+              className="no-print px-3 py-2 text-sage-600 hover:text-sage-900 transition-colors"
+              aria-label="Print page"
+              title="Print gifts"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+              </svg>
+            </button>
+          </div>
           <p className="text-lg text-sage-600 max-w-2xl mx-auto">
             {siteConfig.registry?.subtitle || "Your presence is the greatest gift, but if you'd like to honor us with something special..."}
           </p>
@@ -107,16 +119,16 @@ function Gifts({ embedded = false }) {
         {/* Registries */}
         {registries.length > 0 && (
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
+            <h2 className="section-subheader text-2xl font-semibold text-sage-900 mb-6 text-center">
               Gift Registries
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 mx-auto max-w-3xl">
               {registries.map((registry, index) => {
                 const giftId = `registry-${index}`;
                 const reserved = isReserved(giftId);
                 
                 return (
-                  <Card key={index} className="p-6 text-center relative">
+                  <Card key={index} className="modern-panel relative p-6 text-center">
                     {reserved && (
                       <div className="absolute top-4 right-4 bg-rose-100 text-rose-900 border border-rose-200 text-xs px-2 py-1 rounded-full font-medium">
                         Reserved
@@ -154,15 +166,16 @@ function Gifts({ embedded = false }) {
           </div>
         )}
 
-        {/* Cash Funds */}
+        {/* Cash gift options */}
         {cashFunds.length > 0 && (
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
-              Cash Funds
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
               {cashFunds.map((fund, index) => (
-                <Card key={index} className="p-6 text-center">
+                <Card key={index} className="modern-panel relative overflow-hidden p-8 text-center">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[var(--w-accent)] via-[var(--w-rose-400)] to-[var(--w-accent)]" />
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--w-highlight-bg)] text-2xl text-[var(--w-highlight)]">
+                    ♥
+                  </div>
                   <h3 className="text-xl font-semibold text-sage-900 mb-2">
                     {fund.name}
                   </h3>
@@ -170,7 +183,7 @@ function Gifts({ embedded = false }) {
                     <p className="text-sage-600 mb-4">{fund.description}</p>
                   )}
                   {fund.paybill && (
-                    <div className="text-left space-y-1 mb-5 text-sage-700">
+                    <div className="modern-panel rounded-2xl p-4 text-left text-sage-700">
                       <h4 className="font-semibold text-sage-900">Preferred option: M-Pesa Paybill</h4>
                       <p>Paybill: {fund.paybill.number}</p>
                       <p>Account Number: {fund.paybill.accountNumber}</p>
@@ -178,7 +191,7 @@ function Gifts({ embedded = false }) {
                     </div>
                   )}
                   {fund.phoneNumbers?.length > 0 && (
-                    <div className="text-left space-y-2 mb-5">
+                    <div className="modern-panel mt-4 rounded-2xl p-4 text-left">
                       <h4 className="font-semibold text-sage-900">Or send directly to M-Pesa</h4>
                       {fund.phoneNumbers.map((contact) => (
                         <a
@@ -192,7 +205,7 @@ function Gifts({ embedded = false }) {
                     </div>
                   )}
                   {fund.internationalBank && (
-                    <div className="text-left space-y-1 text-sage-700">
+                    <div className="modern-panel mt-4 rounded-2xl p-4 text-left text-sage-700">
                       <h4 className="font-semibold text-sage-900">
                         For our international friends
                       </h4>

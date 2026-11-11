@@ -31,10 +31,10 @@ function Accordion({ items, className = '', highlightQuery = '' }) {
   return (
     <div className={`space-y-2 ${className}`}>
       {items.map((item, index) => (
-        <div key={index} className="border border-ivory-200 rounded-xl overflow-hidden">
+        <div key={index} className="modern-panel mb-4 overflow-hidden rounded-2xl">
           <button
             onClick={() => toggle(index)}
-            className="w-full px-6 py-4 flex justify-between items-center hover:bg-ivory-50 transition-colors text-left"
+            className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-white/40"
           >
             <span className="font-medium text-sage-900">
               {highlightQuery ? highlightText(item.title, highlightQuery) : item.title}
@@ -51,7 +51,7 @@ function Accordion({ items, className = '', highlightQuery = '' }) {
             </svg>
           </button>
           {openIndex === index && (
-            <div className="px-6 py-4 bg-ivory-100 border-t border-ivory-200 animate-slide-up">
+            <div className="animate-slide-up border-t border-ivory-200 bg-white/25 px-6 py-5">
               <p className="text-sage-700">
                 {highlightQuery ? highlightText(item.content, highlightQuery) : item.content}
               </p>
@@ -64,4 +64,3 @@ function Accordion({ items, className = '', highlightQuery = '' }) {
 }
 
 export default Accordion;
-

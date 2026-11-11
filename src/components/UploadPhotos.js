@@ -144,13 +144,25 @@ function UploadPhotos({ embedded = false }) {
   };
 
   return (
-    <div id={embedded ? 'upload-photos' : undefined} className={`min-h-screen bg-ivory-50 ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}>
+    <div id={embedded ? 'upload-photos' : undefined} className={`modern-section min-h-screen ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}>
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="section-header text-4xl sm:text-title font-semibold text-sage-900">
-            {siteConfig.uploadPhotos?.title || 'Upload Your Photos'}
-          </h1>
+          <div className="flex justify-center items-center gap-4 mb-4">
+            <h1 className="section-header text-4xl sm:text-title font-semibold text-sage-900">
+              {siteConfig.uploadPhotos?.title || 'Upload Your Photos'}
+            </h1>
+            <button
+              onClick={() => window.print()}
+              className="no-print px-3 py-2 text-sage-600 hover:text-sage-900 transition-colors"
+              aria-label="Print page"
+              title="Print photo upload"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+              </svg>
+            </button>
+          </div>
           <p className="text-lg text-sage-600 max-w-2xl mx-auto">
             {siteConfig.uploadPhotos?.subtitle || 'Share your favorite moments from our special day!'}
           </p>
@@ -158,7 +170,7 @@ function UploadPhotos({ embedded = false }) {
 
         {/* Drag and Drop Area */}
         <Card
-          className={`p-12 mb-8 transition-all ${
+          className={`modern-panel mb-8 p-8 transition-all sm:p-12 ${
             isDragging ? 'border-2 border-[var(--w-accent)] bg-[var(--w-bg)]' : 'border-2 border-dashed border-[var(--w-border)]'
           }`}
           onDragEnter={handleDragEnter}
@@ -167,7 +179,7 @@ function UploadPhotos({ embedded = false }) {
           onDrop={handleDrop}
         >
           <div className="text-center">
-            <div className="text-6xl mb-4">📸</div>
+            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-rose-100 text-4xl shadow-[0_8px_24px_rgba(196,132,138,0.18)]">📸</div>
             <h3 className="text-xl font-semibold text-sage-900 mb-2">
               {isDragging ? 'Drop files here' : 'Drag & drop photos here'}
             </h3>
@@ -196,12 +208,12 @@ function UploadPhotos({ embedded = false }) {
         {/* File Previews */}
         {previews.length > 0 && (
           <div className="mb-8">
-            <h2 className="text-xl font-semibold text-sage-900 mb-4">
+            <h2 className="section-subheader text-xl font-semibold text-sage-900 mb-4">
               Selected Photos ({previews.length})
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4">
               {previews.map((preview, index) => (
-                <Card key={index} className="relative group overflow-hidden">
+                <Card key={index} className="modern-panel group relative overflow-hidden">
                   <img
                     src={preview.preview}
                     alt={`Preview ${index + 1}`}
@@ -238,9 +250,9 @@ function UploadPhotos({ embedded = false }) {
 
             {uploading && (
               <div className="max-w-md mx-auto">
-                <div className="w-full bg-ivory-200 rounded-full h-3 mb-2">
+                <div className="mb-2 h-3 w-full rounded-full bg-ivory-200 p-0.5">
                   <div
-                    className="bg-[var(--w-accent)] h-3 rounded-full transition-all duration-300"
+                    className="h-2 rounded-full bg-gradient-to-r from-sage-600 to-rose-400 transition-all duration-300"
                     style={{ width: `${progress}%` }}
                   />
                 </div>

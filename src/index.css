@@ -60,10 +60,18 @@
     --w-glow: rgba(74, 107, 91, 0.15);       /* sage glow for hero */
     --w-accent-dot: var(--w-sage-600);       /* small heading accent dot */
     --w-glass: rgba(248, 245, 239, 0.85);    /* ivory glass for mobile menu */
+    --w-radius-card: 1.25rem;
+    --w-radius-control: 0.8rem;
+    --w-shadow-soft: 0 12px 32px rgba(38, 56, 47, 0.08);
+    --w-shadow-lifted: 0 20px 50px rgba(38, 56, 47, 0.14);
   }
 
   * {
     @apply antialiased;
+  }
+
+  img {
+    @apply block;
   }
   
   body {
@@ -71,10 +79,20 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
+    line-height: 1.6;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold tracking-tight;
+    line-height: 1.15;
+  }
+
+  ::selection {
+    @apply bg-rose-200 text-sage-900;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-rose-400 ring-offset-2 ring-offset-ivory-50;
   }
 }
 
@@ -84,7 +102,16 @@
   .btn-wedding {
     @apply px-6 py-3 rounded-full font-medium transition-all duration-200;
     @apply hover:scale-105 active:scale-95;
-    @apply shadow-apple hover:shadow-apple-lg;
+    box-shadow: var(--w-shadow-soft);
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-wedding:hover {
+    box-shadow: var(--w-shadow-lifted);
   }
   
   /* Primary: sage fill with ivory text */
@@ -113,22 +140,52 @@
 
   /* Apple-style card — tonal ivory surface instead of stark white */
   .card-apple {
-    @apply bg-[var(--w-surface)] rounded-2xl border border-[var(--w-border)] shadow-apple;
+    @apply bg-[var(--w-surface)] border border-[var(--w-border)];
+    border-radius: var(--w-radius-card);
+    box-shadow: var(--w-shadow-soft);
     @apply transition-all duration-300;
-    @apply hover:shadow-apple-lg hover:-translate-y-1;
+    @apply hover:-translate-y-1;
+  }
+
+  .card-apple:hover {
+    box-shadow: var(--w-shadow-lifted);
   }
   
   /* Apple-style input */
   .input-apple {
-    @apply w-full px-4 py-3 rounded-xl border border-[var(--w-border)];
+    @apply w-full px-4 py-3 border border-[var(--w-border)];
     @apply bg-white text-[var(--w-text)];
     @apply focus:outline-none focus:ring-2 focus:ring-[var(--w-rose-300)] focus:border-[var(--w-sage-400)];
     @apply transition-all duration-200;
+    border-radius: var(--w-radius-control);
   }
   
   /* Section container */
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .modern-section {
+    @apply relative overflow-hidden border-t border-white/60 bg-gradient-to-b from-ivory-100 via-ivory-50 to-ivory-100;
+  }
+
+  .modern-section::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/35 to-transparent;
+  }
+
+  .modern-section > .section-container {
+    @apply relative z-10;
+  }
+
+  .modern-panel {
+    @apply border border-white/70 bg-white/45 backdrop-blur-sm;
+    border-radius: var(--w-radius-card);
+    box-shadow: var(--w-shadow-soft);
+  }
+
+  .responsive-frame {
+    @apply aspect-video h-auto w-full;
   }
   
   /* Section header divider — thin sage hairline in place of flat color blocks */
@@ -146,15 +203,52 @@
     @apply bg-gradient-to-b from-ivory-100 to-ivory-50;
   }
   
-  /* Section header anchor — heading with dusty-rose underline so modules read as distinct blocks */
+  /* Section header anchor — modern bullet and underline make each module distinct */
   .section-header {
     @apply border-b-2 border-[var(--w-rose-300)] pb-2 mb-6 inline-block relative;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
   }
 
   /* Small sage accent dot before a section heading — delicate modern marker */
   .section-header::before {
     content: "";
-    @apply absolute left-[calc(-1.5rem-2px)] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[var(--w-accent-dot)];
+    @apply absolute left-[-1.35rem] top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[var(--w-accent-dot)];
+    box-shadow:
+      0 0 0 4px var(--w-bg),
+      0 0 0 5px var(--w-rose-200),
+      0 3px 8px rgba(74, 107, 91, 0.2);
+  }
+
+  .section-header::after {
+    content: "";
+    @apply absolute -bottom-[3px] left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-[var(--w-rose-500)];
+  }
+
+  .section-header--standalone {
+    @apply pl-5;
+  }
+
+  .section-header--standalone::before {
+    @apply left-0;
+  }
+
+  .section-subheader {
+    @apply border-b-2 border-[var(--w-rose-200)] pb-2 inline-block relative;
+  }
+
+  .section-subheader::before {
+    content: "";
+    @apply absolute left-[-1.15rem] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[var(--w-accent-dot)];
+    box-shadow: 0 0 0 3px var(--w-bg), 0 0 0 4px var(--w-rose-200);
+  }
+
+  .section-subheader::after {
+    content: "";
+    @apply absolute -bottom-[3px] left-1/2 h-0.5 w-7 -translate-x-1/2 rounded-full bg-[var(--w-rose-500)];
+  }
+
+  .number-badge {
+    @apply absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--w-accent)] text-sm font-semibold text-white shadow-apple;
   }
 
   /* Subtle radial glow behind hero text — modern depth without new hues */
@@ -164,7 +258,24 @@
   
   /* Darker hero overlay — white text stays legible over any background image */
   .hero-overlay {
-    @apply bg-gradient-to-b from-sage-900/30 via-sage-950/60 to-sage-950/80 backdrop-blur-sm;
+    @apply bg-gradient-to-b from-sage-900/30 via-sage-950/65 to-sage-950/90 backdrop-blur-[2px];
+  }
+
+  .hero-section::after {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-sage-950 to-transparent;
+  }
+
+  .hero-background {
+    animation: heroDrift 18s ease-in-out infinite alternate;
+  }
+
+  .hero-content-panel {
+    animation: heroContentIn 900ms ease-out both;
+  }
+
+  .hero-scroll-cue {
+    animation: heroScrollCue 2.2s ease-in-out infinite;
   }
 
   .splash-intro {
@@ -222,6 +333,37 @@
     }
   }
 
+  @keyframes heroDrift {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes heroContentIn {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes heroScrollCue {
+    0%, 100% {
+      transform: translate(-50%, 0);
+      opacity: 0.65;
+    }
+    50% {
+      transform: translate(-50%, 0.5rem);
+      opacity: 1;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .splash-intro,
     .splash-intro-logo {
@@ -232,6 +374,41 @@
     .splash-intro-exiting .splash-intro-logo {
       animation: none;
     }
+
+    .hero-background,
+    .hero-content-panel,
+    .hero-scroll-cue {
+      animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .section-header {
+    @apply text-3xl;
+  }
+
+  .section-header::before {
+    @apply left-[-1rem] h-2.5 w-2.5;
+  }
+
+  .section-header--standalone {
+    @apply pl-4;
+  }
+
+  .section-container {
+    @apply px-4;
+  }
+
+  .hero-content-panel {
+    @apply rounded-[1.5rem] px-5 py-6;
   }
 }
 
@@ -289,7 +466,8 @@
 
   /* Cards and sections */
   .card-apple,
-  section {
+  section,
+  .modern-panel {
     page-break-inside: avoid;
     border: 1px solid #ccc !important;
     margin-bottom: 1rem;

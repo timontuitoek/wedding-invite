@@ -110,11 +110,6 @@ export const christianWeddingExample = {
     subtitle: "Your presence is the greatest gift, but if you'd like to honor us...",
     registries: [
       {
-        name: "Amazon",
-        url: "https://www.amazon.com/wedding-registry",
-        description: "Our Amazon registry",
-      },
-      {
         name: "Bed Bath & Beyond",
         url: "https://www.bedbathandbeyond.com/wedding-registry",
         description: "Home essentials registry",

@@ -26,7 +26,7 @@ function OurStory() {
   };
 
   return (
-    <div className="min-h-screen bg-ivory-50 pt-28 pb-26">
+    <div className="modern-section min-h-screen pt-28 pb-26">
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-16">
@@ -43,7 +43,7 @@ function OurStory() {
           {/* Partner 1's Story */}
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="w-full lg:w-80 flex-shrink-0">
-              <div className="rounded-2xl overflow-hidden shadow-apple-lg">
+              <div className="overflow-hidden rounded-[1.5rem] border border-white/70 shadow-[0_20px_50px_rgba(38,56,47,0.14)]">
                 <img
                   src={siteConfig.ourStory?.partner1Story?.image}
                   alt={siteConfig.couple.name1}
@@ -51,7 +51,7 @@ function OurStory() {
                 />
               </div>
             </div>
-            <Card className="flex-1 p-8">
+            <Card className="modern-panel flex-1 p-8">
               <h2 className="text-3xl font-semibold text-sage-900 mb-4">
                 {siteConfig.ourStory?.partner1Story?.name}
               </h2>
@@ -64,7 +64,7 @@ function OurStory() {
           {/* Partner 2's Story */}
           <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
             <div className="w-full lg:w-80 flex-shrink-0">
-              <div className="rounded-2xl overflow-hidden shadow-apple-lg">
+              <div className="overflow-hidden rounded-[1.5rem] border border-white/70 shadow-[0_20px_50px_rgba(38,56,47,0.14)]">
                 <img
                   src={siteConfig.ourStory?.partner2Story?.image}
                   alt={siteConfig.couple.name2}
@@ -72,7 +72,7 @@ function OurStory() {
                 />
               </div>
             </div>
-            <Card className="flex-1 p-8">
+            <Card className="modern-panel flex-1 p-8">
               <h2 className="text-3xl font-semibold text-sage-900 mb-4">
                 {siteConfig.ourStory?.partner2Story?.name}
               </h2>
@@ -86,7 +86,7 @@ function OurStory() {
         {/* How We Met */}
         {howWeMet?.enabled && (
           <div className="mb-20">
-            <Card className="p-8 lg:p-12">
+            <Card className="modern-panel p-8 lg:p-12">
               <h2 className="text-3xl font-semibold text-sage-900 mb-6 text-center">
                 {howWeMet.title}
               </h2>
@@ -100,7 +100,7 @@ function OurStory() {
         {/* Proposal */}
         {proposal?.enabled && (
           <div className="mb-20">
-            <Card className="p-8 lg:p-12">
+            <Card className="modern-panel p-8 lg:p-12">
               <h2 className="text-3xl font-semibold text-sage-900 mb-6 text-center">
                 {proposal.title}
               </h2>
@@ -109,7 +109,7 @@ function OurStory() {
                   <img
                     src={proposal.image}
                     alt="Proposal"
-                    className="w-full rounded-xl shadow-apple"
+                    className="w-full rounded-2xl shadow-[0_12px_32px_rgba(38,56,47,0.10)]"
                   />
                 </div>
               )}
@@ -130,7 +130,7 @@ function OurStory() {
             </div>
 
             <div className="relative max-w-4xl mx-auto">
-              <div className="relative h-96 rounded-2xl overflow-hidden shadow-apple-lg">
+              <div className="relative h-96 overflow-hidden rounded-[1.5rem] border border-white/70 shadow-[0_20px_50px_rgba(38,56,47,0.14)]">
                 <img
                   src={images[currentImageIndex]}
                   alt={`Memory ${currentImageIndex + 1}`}
@@ -140,7 +140,7 @@ function OurStory() {
                   <>
                     <button
                       onClick={goToPreviousImage}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-[var(--w-border)]/80 backdrop-blur-sm rounded-full p-3 hover:bg-[var(--w-border)] transition-colors shadow-apple"
+                      className="absolute left-3 top-1/2 min-h-11 min-w-11 -translate-y-1/2 rounded-full bg-[var(--w-border)]/80 p-3 shadow-apple backdrop-blur-sm transition-colors hover:bg-[var(--w-border)] sm:left-4"
                       aria-label="Previous image"
                     >
                       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -149,7 +149,7 @@ function OurStory() {
                     </button>
                     <button
                       onClick={goToNextImage}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-[var(--w-border)]/80 backdrop-blur-sm rounded-full p-3 hover:bg-[var(--w-border)] transition-colors shadow-apple"
+                      className="absolute right-3 top-1/2 min-h-11 min-w-11 -translate-y-1/2 rounded-full bg-[var(--w-border)]/80 p-3 shadow-apple backdrop-blur-sm transition-colors hover:bg-[var(--w-border)] sm:right-4"
                       aria-label="Next image"
                     >
                       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

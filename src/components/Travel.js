@@ -117,16 +117,22 @@ function Travel({ embedded = false }) {
     return '🌤️';
   };
 
+  const transportationItems = [
+    transportation.airport && { title: 'Airport Information', content: transportation.airport },
+    transportation.parking && { title: 'Parking', content: transportation.parking },
+    transportation.shuttle && { title: 'Shuttle Service', content: transportation.shuttle },
+  ].filter(Boolean);
+
   return (
     <div
       id={embedded ? 'travel' : undefined}
-      className={`min-h-screen bg-ivory-50 ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}
+      className={`modern-section min-h-screen ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}
     >
       <div className="section-container">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="flex justify-center items-center gap-4 mb-4">
-            <h1 className="section-header text-4xl sm:text-title font-semibold text-sage-900">
+            <h1 className="section-header section-header--standalone text-4xl sm:text-title font-semibold text-sage-900">
               {siteConfig.travel?.title || 'Travel & Accommodation'}
             </h1>
             <button
@@ -148,7 +154,7 @@ function Travel({ embedded = false }) {
         {/* Hotels */}
         {hotels.length > 0 && (
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
+            <h2 className="section-subheader text-2xl font-semibold text-sage-900 mb-6 text-center">
               Recommended Hotels in Nairobi CBD
             </h2>
             <p className="text-center text-sage-600 mb-8 max-w-2xl mx-auto">
@@ -168,12 +174,15 @@ function Travel({ embedded = false }) {
               if (categoryHotels.length === 0) return null;
               return (
                 <div key={categoryName} className="mb-12">
-                  <h3 className="text-xl font-semibold text-sage-900 mb-6 text-center">
+                  <h3 className="section-subheader text-xl font-semibold text-sage-900 mb-6 text-center">
                     {categoryName}
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    {categoryHotels.map((hotel) => (
-                      <Card key={hotel.name} className="p-6">
+                  <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {categoryHotels.map((hotel, index) => (
+                      <Card key={hotel.name} className="modern-panel relative p-6">
+                        <span className="number-badge" aria-label={`Hotel ${index + 1}`}>
+                          {index + 1}
+                        </span>
                         <h3 className="text-xl font-semibold text-sage-900 mb-1">
                           {hotel.name}
                         </h3>
@@ -209,36 +218,31 @@ function Travel({ embedded = false }) {
         {/* Transportation */}
         {(transportation.airport || transportation.parking || transportation.shuttle) && (
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
+            <h2 className="section-subheader text-2xl font-semibold text-sage-900 mb-6 text-center">
               Transportation
             </h2>
-            <div className="max-w-3xl mx-auto space-y-4">
-              {transportation.airport && (
-                <Card className="p-6">
-                  <h3 className="text-lg font-semibold text-sage-900 mb-2">
-                    Airport Information
-                  </h3>
-                  <p className="text-sage-600">
-                    <strong>{transportation.airport.name}</strong> ({transportation.airport.code})
-                    {transportation.airport.distance && ` - ${transportation.airport.distance} from venue`}
-                  </p>
-                  {transportation.airport.directions && (
-                    <p className="text-sage-600 mt-2">{transportation.airport.directions}</p>
+            <div className="mx-auto max-w-3xl space-y-4">
+              {transportationItems.map((item, index) => (
+                <Card key={item.title} className="modern-panel relative p-6">
+                  <span className="number-badge" aria-label={`Transportation option ${index + 1}`}>
+                    {index + 1}
+                  </span>
+                  <h3 className="text-lg font-semibold text-sage-900 mb-2">{item.title}</h3>
+                  {item.title === 'Airport Information' ? (
+                    <>
+                      <p className="text-sage-600">
+                        <strong>{item.content.name}</strong> ({item.content.code})
+                        {item.content.distance && ` - ${item.content.distance} from venue`}
+                      </p>
+                      {item.content.directions && (
+                        <p className="text-sage-600 mt-2">{item.content.directions}</p>
+                      )}
+                    </>
+                  ) : (
+                    <p className="text-sage-600">{item.content}</p>
                   )}
                 </Card>
-              )}
-              {transportation.parking && (
-                <Card className="p-6">
-                  <h3 className="text-lg font-semibold text-sage-900 mb-2">Parking</h3>
-                  <p className="text-sage-600">{transportation.parking}</p>
-                </Card>
-              )}
-              {transportation.shuttle && (
-                <Card className="p-6">
-                  <h3 className="text-lg font-semibold text-sage-900 mb-2">Shuttle Service</h3>
-                  <p className="text-sage-600">{transportation.shuttle}</p>
-                </Card>
-              )}
+              ))}
             </div>
           </div>
         )}
@@ -246,7 +250,7 @@ function Travel({ embedded = false }) {
         {/* Local Attractions */}
         {localAttractions.length > 0 && (
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
+            <h2 className="section-subheader text-2xl font-semibold text-sage-900 mb-6 text-center">
               Local Attractions
             </h2>
             {/* Group attractions by category */}
@@ -267,9 +271,12 @@ function Travel({ embedded = false }) {
                   <p className="text-center text-sage-600 mb-6 max-w-2xl mx-auto">
                     {categoryAttractions[0].intro}
                   </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    {categoryAttractions.map((attraction) => (
-                      <Card key={attraction.name} className="p-6">
+                  <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {categoryAttractions.map((attraction, index) => (
+                      <Card key={attraction.name} className="modern-panel relative p-6">
+                        <span className="number-badge" aria-label={`Attraction ${index + 1}`}>
+                          {index + 1}
+                        </span>
                         <h3 className="text-xl font-semibold text-sage-900 mb-1">
                           {attraction.name}
                         </h3>
@@ -320,22 +327,22 @@ function Travel({ embedded = false }) {
         {/* Weather Forecast */}
         {(weather || weatherLoading || weatherError) && (
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-sage-900 mb-6 text-center">
+            <h2 className="section-subheader text-2xl font-semibold text-sage-900 mb-6 text-center">
               Weather Forecast
             </h2>
             {weatherLoading && (
-              <Card className="p-6 text-center max-w-2xl mx-auto">
+              <Card className="modern-panel mx-auto max-w-2xl p-6 text-center">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-sage-600 mx-auto mb-2"></div>
                 <p className="text-sage-600">Loading weather forecast...</p>
               </Card>
             )}
             {weatherError && (
-              <Card className="p-6 text-center max-w-2xl mx-auto">
+              <Card className="modern-panel mx-auto max-w-2xl p-6 text-center">
                 <p className="text-sage-600">{weatherError}</p>
               </Card>
             )}
             {weather && (
-              <div className="max-w-4xl mx-auto">
+              <div className="responsive-frame mx-auto max-w-4xl overflow-hidden rounded-2xl">
                 {/* Wedding Day Weather */}
                 <Card className="p-6 mb-6">
                   <h3 className="text-xl font-semibold text-sage-900 mb-4">
@@ -401,11 +408,12 @@ function Travel({ embedded = false }) {
               <iframe
                 src={maps.venue}
                 width="100%"
-                height="400"
-                style={{ border: 0, borderRadius: '1rem' }}
+                height="100%"
+                style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
                 title="Venue Location"
+                className="h-full w-full"
               />
             </div>
             <a

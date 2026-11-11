@@ -24,7 +24,7 @@ function GetInTouch() {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div className="modern-section relative w-full min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
       {/* Sage tint overlay */}
       <div className="absolute inset-0 contact-overlay" />
 
@@ -40,7 +40,7 @@ function GetInTouch() {
         {/* Form Section */}
         <div className="max-w-lg sm:max-w-xl lg:max-w-2xl mx-auto">
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="bg-white/90 backdrop-blur-sm border border-[var(--w-border)]/50 rounded-xl p-6 shadow-lg space-y-4">
+            <form onSubmit={handleSubmit} className="modern-panel space-y-4 rounded-[1.5rem] p-6">
               {/* Name Field */}
               <div className="mb-4">
                 <input
@@ -88,7 +88,7 @@ function GetInTouch() {
               </button>
             </form>
           ) : (
-            <div className="bg-white/90 backdrop-blur-sm border border-[var(--w-border)]/50 rounded-xl p-6 shadow-lg">
+            <div className="modern-panel rounded-[1.5rem] p-6">
               <h2 className="text-2xl font-bold text-[var(--w-text)] mb-4">Thank You!</h2>
               <p className="text-lg text-[var(--w-text-secondary)]">Your message has been received, and we will get back to you soon.</p>
             </div>

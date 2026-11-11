@@ -39,13 +39,13 @@ function Modal({ isOpen, onClose, children, className = '' }) {
       
       {/* Modal Content */}
       <div
-        className={`relative bg-white rounded-2xl shadow-apple-xl max-w-4xl w-full max-h-[90vh] overflow-auto animate-scale-in ${className}`}
+        className={`modern-panel relative max-h-[90vh] w-full max-w-4xl overflow-auto rounded-[1.5rem] bg-white/95 animate-scale-in ${className}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full hover:bg-ivory-100 transition-colors z-10"
+          className="absolute right-4 top-4 z-10 rounded-full p-2 transition-colors hover:bg-ivory-100"
           aria-label="Close"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,4 +60,3 @@ function Modal({ isOpen, onClose, children, className = '' }) {
 }
 
 export default Modal;
-

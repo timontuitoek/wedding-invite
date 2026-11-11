@@ -84,7 +84,7 @@ function EventPage({ embedded = false }) {
   return (
     <>
       {/* Main Content */}
-      <div id={embedded ? 'events' : undefined} className={`min-h-screen bg-ivory-50 ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}>
+      <div id={embedded ? 'events' : undefined} className={`modern-section min-h-screen ${embedded ? 'scroll-mt-20 py-20' : 'pt-28 pb-26'}`}>
         <div className="section-container">
           {/* Title Section */}
           <div className="text-center mb-12">
@@ -109,20 +109,33 @@ function EventPage({ embedded = false }) {
           </div>
 
           {/* Event Details */}
-          <div className="max-w-4xl mx-auto grid gap-6 lg:grid-cols-2">
+          <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
             {events.map((event) => (
               <Card
                 key={event.id}
-                className="p-6"
+                className="modern-panel group overflow-hidden p-0"
               >
-                <h2 className="text-xl font-semibold text-sage-900 mb-2">
-                  {event.name}
-                </h2>
-                <div className="mt-4 space-y-4">
+                <div className="h-1.5 bg-gradient-to-r from-sage-600 via-rose-400 to-sage-600" />
+                <div className="p-6 sm:p-8">
+                  <div className="mb-6 flex items-start justify-between gap-4">
+                    <h2 className="section-subheader text-xl font-semibold text-sage-900">
+                      {event.name}
+                    </h2>
+                    <span className="rounded-full bg-rose-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-rose-900">
+                      Details
+                    </span>
+                  </div>
+                  <div className="space-y-4">
                     <div className="space-y-2">
-                      <p className="text-sage-700"><strong>Date:</strong> {event.date}</p>
-                      <p className="text-sage-700"><strong>Time:</strong> {event.time}</p>
-                      <p className="text-sage-700"><strong>Venue:</strong> {event.venue}</p>
+                      <p className="rounded-xl bg-ivory-50/80 px-4 py-3 text-sage-700">
+                        <strong className="mr-1 text-sage-900">Date:</strong> {event.date}
+                      </p>
+                      <p className="rounded-xl bg-ivory-50/80 px-4 py-3 text-sage-700">
+                        <strong className="mr-1 text-sage-900">Time:</strong> {event.time}
+                      </p>
+                      <p className="rounded-xl bg-ivory-50/80 px-4 py-3 text-sage-700">
+                        <strong className="mr-1 text-sage-900">Venue:</strong> {event.venue}
+                      </p>
                       <a
                         href="https://maps.app.goo.gl/njMRbcyr46SdzePEA"
                         target="_blank"
@@ -134,26 +147,25 @@ function EventPage({ embedded = false }) {
                       {event.dressCode && (
                         <p className="text-sage-700"><strong>Dress Code:</strong> {event.dressCode}</p>
                       )}
-                      {event.description && (
-                        <p className="text-sage-600 mt-2">{event.description}</p>
-                      )}
+                      {event.description && <p className="mt-2 text-sage-600">{event.description}</p>}
                     </div>
                     {event.mapEmbed && (
-                      <div className="mt-4 rounded-xl overflow-hidden">
+                      <div className="responsive-frame mt-4 overflow-hidden rounded-2xl border border-white/80 shadow-[0_8px_24px_rgba(38,56,47,0.08)]">
                         <iframe
                           src={event.mapEmbed}
                           width="100%"
-                          height="200"
+                          height="100%"
                           style={{ border: 0 }}
                           allowFullScreen=""
                           loading="lazy"
                           title={`${event.name} Location`}
+                          className="h-full w-full"
                         />
                       </div>
                     )}
 
                     {/* Add to Calendar */}
-                    <div className="mt-4 pt-4 border-t border-ivory-200">
+                    <div className="mt-6 border-t border-ivory-200 pt-6">
                       <p className="text-sm font-medium text-sage-700 mb-2">Add to Calendar:</p>
                       <div className="flex flex-wrap gap-2">
                         <a
@@ -193,7 +205,7 @@ function EventPage({ embedded = false }) {
                       </div>
                     </div>
 
-                    <div className="mt-6 pt-6 border-t border-ivory-200 text-center">
+                    <div className="mt-6 border-t border-ivory-200 pt-6 text-center">
                       <p className="text-sage-600 mb-4">Kindly let us know if you'll be joining us.</p>
                       <a
                         href="https://forms.gle/21Uj3ux6xYosE1Qg9"
@@ -204,6 +216,7 @@ function EventPage({ embedded = false }) {
                         RSVP Now
                       </a>
                     </div>
+                  </div>
                 </div>
               </Card>
             ))}

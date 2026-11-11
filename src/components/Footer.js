@@ -5,9 +5,9 @@ function Footer() {
   const { tagline, contactEmail, socialMedia } = siteConfig.footer || {};
 
   return (
-    <footer className="bg-ivory-50 border-t border-ivory-200 text-sage-800 py-8 mt-auto">
+    <footer className="border-t border-ivory-200 bg-gradient-to-b from-ivory-100 to-ivory-50 py-10 text-sage-800 mt-auto">
       <div className="section-container">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           {/* Tagline */}
           <p className="text-sm italic text-sage-600 text-center md:text-left">
             "{tagline}"

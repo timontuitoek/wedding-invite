@@ -24,7 +24,7 @@ function Navbar() {
       return undefined;
     }
 
-    const sections = ['home', 'events', 'upload-photos', 'gifts', 'travel', 'faq'];
+    const sections = ['home', 'events', 'gifts', 'travel', 'upload-photos', 'faq'];
     const updateActiveSection = () => {
       const marker = window.scrollY + 120;
       let currentSection = 'home';
@@ -89,12 +89,12 @@ function Navbar() {
         isIntroVisible ? 'opacity-0 pointer-events-none' : 'opacity-100'
       } ${
         scrolled
-          ? 'bg-[var(--w-bg)]/98 backdrop-blur-apple shadow-apple border-b border-[var(--w-border)]'
-          : 'bg-[var(--w-dark)] backdrop-blur-sm'
+          ? 'bg-[var(--w-bg)]/90 backdrop-blur-xl shadow-[0_8px_30px_rgba(38,56,47,0.10)] border-b border-[var(--w-border)]'
+          : 'bg-[var(--w-dark)]/70 backdrop-blur-md'
       }`}
     >
       <div className="section-container">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex items-center justify-between py-3">
           {/* Logo / Home button */}
           <Link
             to="/"
@@ -104,23 +104,30 @@ function Navbar() {
               replayHome();
             }}
             aria-label="Wedding logo - Home"
-            className="block w-11 h-11 rounded-lg overflow-hidden transition-all duration-200 hover:opacity-80 hover:scale-105 active:scale-95"
+            className="group flex items-center gap-3 transition-all duration-200 active:scale-95"
           >
             <img
               src={`${process.env.PUBLIC_URL}/Beige%20and%20Blue%20Floral%20Wedding%20Logo.png`}
               alt="Wedding logo - Home"
               width={2000}
               height={2000}
-              className="w-11 h-11 object-cover rounded-lg"
+              className="h-11 w-11 rounded-xl object-cover shadow-[0_4px_14px_rgba(38,56,47,0.18)] transition-transform duration-200 group-hover:scale-105"
               loading="lazy"
             />
+            <span className={`hidden text-sm font-semibold tracking-wide sm:block ${
+              scrolled ? 'text-sage-900' : 'text-white'
+            }`}>
+              {siteConfig.couple.displayName}
+            </span>
           </Link>
 
           {/* Hamburger Icon for Mobile */}
           <div className="lg:hidden">
             <button
               onClick={toggleMenu}
-              className={`focus:outline-none p-2 ${
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isOpen}
+              className={`rounded-xl p-2 transition-colors focus-visible:ring-2 focus-visible:ring-rose-300 ${
                 scrolled ? 'text-sage-900' : 'text-white'
               }`}
             >
@@ -150,7 +157,7 @@ function Navbar() {
           </div>
 
           {/* Links for Large Screens */}
-          <div className={`hidden lg:flex lg:items-center lg:space-x-8`}>
+          <div className="hidden items-center gap-2 lg:flex">
             {navLinks.map((link) => {
               const continuous = location.pathname === '/' && ['homepage', 'events', 'registry', 'uploadPhotos', 'travel', 'faq'].includes(link.key);
               const sectionId = link.key === 'homepage' ? 'home' : link.key === 'events' ? 'events' : link.key === 'registry' ? 'gifts' : link.key === 'uploadPhotos' ? 'upload-photos' : link.key;
@@ -165,14 +172,14 @@ function Navbar() {
                     setIsOpen(false);
                   }
                 }}
-                className={`text-sm font-medium transition-all duration-200 px-2 py-1 ${
+                className={`rounded-full px-3 py-2 text-sm font-medium transition-all duration-200 ${
                   active
                     ? scrolled
-                      ? 'text-rose-800 border-b-2 border-rose-300'
-                      : 'text-white border-b-2 border-rose-300/60'
+                      ? 'bg-rose-100 text-rose-900'
+                      : 'bg-white/15 text-white'
                     : scrolled
-                    ? 'text-[var(--w-text)] hover:text-[var(--w-text)]'
-                    : 'text-white/90 hover:text-white'
+                    ? 'text-[var(--w-text)] hover:bg-ivory-100'
+                    : 'text-white/90 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -184,7 +191,7 @@ function Navbar() {
         {/* Mobile Menu */}
         {isOpen && (
           <div
-            className={`lg:hidden pb-6 space-y-4 animate-slide-up ${
+            className={`modern-panel mt-3 rounded-2xl p-3 lg:hidden animate-slide-up ${
               scrolled ? 'text-sage-900' : 'text-white'
             }`}
           >
@@ -202,14 +209,14 @@ function Navbar() {
                   }
                   toggleMenu();
                 }}
-                className={`block py-2 px-4 rounded-lg transition-colors ${
+                className={`block rounded-xl px-4 py-3 text-sm transition-colors ${
                   active
                     ? scrolled
-                      ? 'bg-rose-50 text-rose-800 font-medium'
-                      : 'bg-white/20 text-white font-medium'
+                      ? 'bg-rose-100 text-rose-900 font-semibold'
+                      : 'bg-white/20 text-white font-semibold'
                     : scrolled
-                    ? 'hover:bg-ivory-100'
-                    : 'hover:bg-white/10'
+                    ? 'text-sage-800 hover:bg-ivory-100'
+                    : 'text-white/90 hover:bg-white/10'
                 }`}
               >
                 {link.label}
