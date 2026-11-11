@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="Add Open Graph and Twitter meta tags for wedding invitation; include share cover image">
+    <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="Remove old share cover image and update Open Graph and Twitter meta tags to use new wedding mark">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cj-share-cover.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cj-wedding-mark.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/cj-wedding-mark.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +197,7 @@
       <workItem from="1793006641022" duration="836000" />
       <workItem from="1793011198298" duration="1677000" />
       <workItem from="1794387465676" duration="256000" />
-      <workItem from="1794387803018" duration="20750000" />
+      <workItem from="1794387803018" duration="22484000" />
     </task>
     <task id="LOCAL-00001" summary="Update wedding details and contact information in configuration">
       <option name="closed" value="true" />
@@ -255,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794411532029</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Remove old share cover image and update Open Graph and Twitter meta tags to use new wedding mark">
+      <option name="closed" value="true" />
+      <created>1794429694648</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1794429694648</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +277,7 @@
     <MESSAGE value="Update FAQ content and simplify Footer component; enhance Travel section layout" />
     <MESSAGE value="Update wedding logo and FAQ attire details; enhance footer and favicon" />
     <MESSAGE value="Add Open Graph and Twitter meta tags for wedding invitation; include share cover image" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Open Graph and Twitter meta tags for wedding invitation; include share cover image" />
+    <MESSAGE value="Remove old share cover image and update Open Graph and Twitter meta tags to use new wedding mark" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove old share cover image and update Open Graph and Twitter meta tags to use new wedding mark" />
   </component>
 </project>
