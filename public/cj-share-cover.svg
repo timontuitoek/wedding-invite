@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">C&amp;J wedding invitation</title>
+  <desc id="description">Chela and Josiah's wedding invitation</desc>
+  <rect width="1200" height="630" fill="#26382f"/>
+  <circle cx="600" cy="315" r="250" fill="#f8f5ef"/>
+  <circle cx="600" cy="315" r="230" fill="none" stroke="#d3cab4" stroke-width="4"/>
+  <circle cx="600" cy="315" r="214" fill="none" stroke="#c4848a" stroke-width="2"/>
+  <text x="600" y="350" text-anchor="middle" fill="#26382f" font-family="Georgia, serif" font-size="150" letter-spacing="12">C&amp;J</text>
+  <path d="M470 405c42 28 84 40 130 40s88-12 130-40" fill="none" stroke="#4a6b5b" stroke-width="4" stroke-linecap="round"/>
+  <text x="600" y="570" text-anchor="middle" fill="#f8f5ef" font-family="Georgia, serif" font-size="28" letter-spacing="5">CHELA &amp; JOSIAH</text>
+</svg>
