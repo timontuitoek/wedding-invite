@@ -75,7 +75,7 @@ export const christianWeddingExample = {
     questions: [
       {
         title: "What should I wear?",
-        content: "Formal attire is requested for the ceremony and reception. Please avoid white. Church-appropriate attire is required for the ceremony.",
+        content: "African-wear, semi-formal wear.",
       },
       {
         title: "Can I bring a plus one?",

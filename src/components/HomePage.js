@@ -53,7 +53,7 @@ function HomePage() {
       {/* Hero Section */}
       <div id="home" className="hero-section relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-sage-950 scroll-mt-20">
         <img
-          src={`${process.env.PUBLIC_URL}/Beige%20and%20Blue%20Floral%20Wedding%20Logo.png`}
+          src={`${process.env.PUBLIC_URL}/cj-wedding-mark.svg`}
           alt=""
           aria-hidden="true"
           className="hero-background absolute inset-0 h-full w-full object-cover object-center opacity-35"
@@ -62,8 +62,8 @@ function HomePage() {
         <div className="hero-glow absolute inset-0" />
         <div className="relative z-10 flex max-w-4xl flex-col items-center justify-center px-4 text-center text-white sm:px-8">
           <img
-            src={`${process.env.PUBLIC_URL}/Beige%20and%20Blue%20Floral%20Wedding%20Logo.png`}
-            alt="Chela and Josiah's wedding logo"
+            src={`${process.env.PUBLIC_URL}/cj-wedding-mark.svg`}
+            alt="C&J wedding logo"
             width={2000}
             height={2000}
             className={`hero-logo mb-8 w-40 rounded-full object-cover shadow-apple-xl transition-all duration-700 sm:w-52 ${

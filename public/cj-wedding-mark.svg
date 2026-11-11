@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title>C&amp;J wedding mark</title>
+  <rect width="512" height="512" rx="96" fill="#f8f5ef"/>
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#d3cab4" stroke-width="4"/>
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#c4848a" stroke-width="2"/>
+  <text x="256" y="286" text-anchor="middle" fill="#26382f" font-family="Georgia, serif" font-size="118" letter-spacing="8">C&amp;J</text>
+  <path d="M142 338c38 26 74 36 114 36s76-10 114-36" fill="none" stroke="#4a6b5b" stroke-width="3" stroke-linecap="round"/>
+</svg>

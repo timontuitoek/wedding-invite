@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="Refactor components for modern design; update styles and improve layout consistency">
+    <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="Update FAQ content and simplify Footer component; enhance Travel section layout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Travel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Travel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Beige and Blue Floral Wedding Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SplashIntro.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SplashIntro.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/examples/christian-wedding-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/christian-wedding-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/siteConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/siteConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +205,7 @@
       <workItem from="1793006641022" duration="836000" />
       <workItem from="1793011198298" duration="1677000" />
       <workItem from="1794387465676" duration="256000" />
-      <workItem from="1794387803018" duration="15267000" />
+      <workItem from="1794387803018" duration="17573000" />
     </task>
     <task id="LOCAL-00001" summary="Update wedding details and contact information in configuration">
       <option name="closed" value="true" />
@@ -232,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794405523690</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update FAQ content and simplify Footer component; enhance Travel section layout">
+      <option name="closed" value="true" />
+      <created>1794407662026</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1794407662026</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +258,7 @@
     <MESSAGE value="Remove Message to Couple component and update routing; enhance FAQ and Travel components" />
     <MESSAGE value="Refactor EventPage component; remove state management and simplify event display" />
     <MESSAGE value="Refactor components for modern design; update styles and improve layout consistency" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor components for modern design; update styles and improve layout consistency" />
+    <MESSAGE value="Update FAQ content and simplify Footer component; enhance Travel section layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update FAQ content and simplify Footer component; enhance Travel section layout" />
   </component>
 </project>

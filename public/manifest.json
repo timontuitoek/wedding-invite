@@ -3,19 +3,19 @@
   "name": "Wedding Invite",
   "icons": [
     {
-      "src": "Beige and Blue Floral Wedding Logo.png",
-      "sizes": "2000x2000",
-      "type": "image/png"
+      "src": "cj-wedding-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     },
     {
-      "src": "Beige and Blue Floral Wedding Logo.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "cj-wedding-mark.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
     },
     {
-      "src": "Beige and Blue Floral Wedding Logo.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "cj-wedding-mark.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
     }
   ],
   "start_url": ".",

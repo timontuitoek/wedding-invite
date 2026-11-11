@@ -16,7 +16,7 @@ const setFavicon = (faviconPath) => {
   }
 };
 
-setFavicon(`${process.env.PUBLIC_URL}/Beige%20and%20Blue%20Floral%20Wedding%20Logo.png`);
+setFavicon(`${process.env.PUBLIC_URL}/cj-wedding-mark.svg`);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const LOGO_PATH = `${process.env.PUBLIC_URL}/Beige%20and%20Blue%20Floral%20Wedding%20Logo.png`;
+const LOGO_PATH = `${process.env.PUBLIC_URL}/cj-wedding-mark.svg`;
 const FULL_DURATION = 2200;
 const REDUCED_DURATION = 150;
 
@@ -30,7 +30,7 @@ function SplashIntro({ replayKey, onComplete }) {
     >
       <img
         src={LOGO_PATH}
-        alt="Wedding logo"
+        alt="C&J wedding logo"
         className="splash-intro-logo"
         width={2000}
         height={2000}

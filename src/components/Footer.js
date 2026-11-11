@@ -15,7 +15,7 @@ function Footer() {
 
           {/* Couple Name */}
           <p className="text-sm font-semibold text-sage-900">
-            {siteConfig.couple.displayName}
+            {siteConfig.couple.name1} & {siteConfig.couple.name2}
           </p>
 
           {/* Creator mark */}

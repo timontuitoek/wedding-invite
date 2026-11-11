@@ -53,7 +53,7 @@ const siteConfig = {
   couple: {
     name1: "Chela",
     name2: "Josiah",
-    displayName: "Chela weds Josiah", // Used in navbar and footer
+    displayName: "C&J", // Used in navbar and footer
     name1Image: "/images/partner1.svg", // Path to partner 1's photo (replace with your image)
     name2Image: "/images/partner2.svg", // Path to partner 2's photo (replace with your image)
   },
@@ -331,7 +331,7 @@ const siteConfig = {
     questions: [
       {
         title: "What should I wear?",
-        content: "Any semi-formal attire is requested",
+        content: "African-wear, semi-formal wear.",
       },
       {
         title: "Can I bring a plus one?",
@@ -354,7 +354,7 @@ const siteConfig = {
 
   // Footer
   footer: {
-    tagline: "Ecclesiastes 3:11 — He has made everything beautiful in its time.",
+    tagline: "Ecclesiastes 3:11 — He has made everything beautiful in His time.",
     contactEmail: "wedding@example.com", // Optional
     socialMedia: {
       instagram: "https://instagram.com/yourhandle", // Optional

@@ -107,8 +107,8 @@ function Navbar() {
             className="group flex items-center gap-3 transition-all duration-200 active:scale-95"
           >
             <img
-              src={`${process.env.PUBLIC_URL}/Beige%20and%20Blue%20Floral%20Wedding%20Logo.png`}
-              alt="Wedding logo - Home"
+              src={`${process.env.PUBLIC_URL}/cj-wedding-mark.svg`}
+              alt="C&J wedding logo - Home"
               width={2000}
               height={2000}
               className="h-11 w-11 rounded-xl object-cover shadow-[0_4px_14px_rgba(38,56,47,0.18)] transition-transform duration-200 group-hover:scale-105"
@@ -117,7 +117,7 @@ function Navbar() {
             <span className={`hidden text-sm font-semibold tracking-wide sm:block ${
               scrolled ? 'text-sage-900' : 'text-white'
             }`}>
-              {siteConfig.couple.displayName}
+              {siteConfig.couple.name1} & {siteConfig.couple.name2}
             </span>
           </Link>
 
