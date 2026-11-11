@@ -79,7 +79,7 @@ export const christianWeddingExample = {
       },
       {
         title: "Can I bring a plus one?",
-        content: "Please check your invitation for plus one details. If you have questions, feel free to reach out to us.",
+        content: "Yes, plus ones are welcome and invited to celebrate with us.",
       },
       {
         title: "Will there be parking?",

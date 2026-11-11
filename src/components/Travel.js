@@ -167,7 +167,7 @@ function Travel({ embedded = false }) {
               "Luxury & Upscale",
               "Mid-Range & Business",
               "Budget & Simple",
-            ].map((categoryName) => {
+            ].map((categoryName, categoryIndex) => {
               const categoryHotels = hotels.filter(
                 (h) => h.category === categoryName
               );
@@ -175,14 +175,11 @@ function Travel({ embedded = false }) {
               return (
                 <div key={categoryName} className="mb-12">
                   <h3 className="section-subheader text-xl font-semibold text-sage-900 mb-6 text-center">
-                    {categoryName}
+                    {categoryIndex + 1}. {categoryName}
                   </h3>
                   <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {categoryHotels.map((hotel, index) => (
+                    {categoryHotels.map((hotel) => (
                       <Card key={hotel.name} className="modern-panel relative p-6">
-                        <span className="number-badge" aria-label={`Hotel ${index + 1}`}>
-                          {index + 1}
-                        </span>
                         <h3 className="text-xl font-semibold text-sage-900 mb-1">
                           {hotel.name}
                         </h3>
@@ -222,11 +219,8 @@ function Travel({ embedded = false }) {
               Transportation
             </h2>
             <div className="mx-auto max-w-3xl space-y-4">
-              {transportationItems.map((item, index) => (
+              {transportationItems.map((item) => (
                 <Card key={item.title} className="modern-panel relative p-6">
-                  <span className="number-badge" aria-label={`Transportation option ${index + 1}`}>
-                    {index + 1}
-                  </span>
                   <h3 className="text-lg font-semibold text-sage-900 mb-2">{item.title}</h3>
                   {item.title === 'Airport Information' ? (
                     <>
@@ -272,11 +266,8 @@ function Travel({ embedded = false }) {
                     {categoryAttractions[0].intro}
                   </p>
                   <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {categoryAttractions.map((attraction, index) => (
+                    {categoryAttractions.map((attraction) => (
                       <Card key={attraction.name} className="modern-panel relative p-6">
-                        <span className="number-badge" aria-label={`Attraction ${index + 1}`}>
-                          {index + 1}
-                        </span>
                         <h3 className="text-xl font-semibold text-sage-900 mb-1">
                           {attraction.name}
                         </h3>

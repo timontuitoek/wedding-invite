@@ -335,7 +335,7 @@ const siteConfig = {
       },
       {
         title: "Can I bring a plus one?",
-        content: "Please check your invitation for plus one details.",
+        content: "Yes, plus ones are welcome and invited to celebrate with us.",
       },
       {
         title: "Will there be parking?",

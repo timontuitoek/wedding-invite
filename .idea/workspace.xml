@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="Refactor EventPage component; remove state management and simplify event display">
+    <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="Refactor components for modern design; update styles and improve layout consistency">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContactUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactUs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EventPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FAQ.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FAQ.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Gifts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Gifts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OurStory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OurStory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Travel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Travel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UploadPhotos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UploadPhotos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Accordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Accordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Modal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/examples/christian-wedding-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/examples/christian-wedding-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/MK.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/siteConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/siteConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +198,7 @@
       <workItem from="1793006641022" duration="836000" />
       <workItem from="1793011198298" duration="1677000" />
       <workItem from="1794387465676" duration="256000" />
-      <workItem from="1794387803018" duration="13238000" />
+      <workItem from="1794387803018" duration="15267000" />
     </task>
     <task id="LOCAL-00001" summary="Update wedding details and contact information in configuration">
       <option name="closed" value="true" />
@@ -238,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794391763444</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactor components for modern design; update styles and improve layout consistency">
+      <option name="closed" value="true" />
+      <created>1794405523690</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1794405523690</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +242,7 @@
     <MESSAGE value="Update wedding details and contact information in configuration" />
     <MESSAGE value="Remove Message to Couple component and update routing; enhance FAQ and Travel components" />
     <MESSAGE value="Refactor EventPage component; remove state management and simplify event display" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor EventPage component; remove state management and simplify event display" />
+    <MESSAGE value="Refactor components for modern design; update styles and improve layout consistency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor components for modern design; update styles and improve layout consistency" />
   </component>
 </project>
