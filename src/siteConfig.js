@@ -354,7 +354,7 @@ const siteConfig = {
 
   // Footer
   footer: {
-    tagline: "Ecclesiastes 3:11 — He has made everything beautiful in His time.",
+    tagline: "Psalms 34:8 — O taste and see that the LORD is good!",
     contactEmail: "wedding@example.com", // Optional
     socialMedia: {
       instagram: "https://instagram.com/yourhandle", // Optional
