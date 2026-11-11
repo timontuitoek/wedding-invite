@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="Update wedding celebration details and enhance Open Graph and Twitter meta tags with new share image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +195,7 @@
       <workItem from="1793006641022" duration="836000" />
       <workItem from="1793011198298" duration="1677000" />
       <workItem from="1794387465676" duration="256000" />
-      <workItem from="1794387803018" duration="25220000" />
+      <workItem from="1794387803018" duration="25917000" />
     </task>
     <task id="LOCAL-00001" summary="Update wedding details and contact information in configuration">
       <option name="closed" value="true" />
@@ -278,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794433858582</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update wedding celebration details and enhance Open Graph and Twitter meta tags with new share image">
+      <option name="closed" value="true" />
+      <created>1794435406445</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1794435406445</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
