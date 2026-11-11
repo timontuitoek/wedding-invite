@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import siteConfig from '../siteConfig';
 import Card from './ui/Card';
 
 function EventPage({ embedded = false }) {
-  const [openEvent, setOpenEvent] = useState(null);
-
   const events = siteConfig.events.events;
 
   // Calendar integration helpers
@@ -83,10 +81,6 @@ function EventPage({ embedded = false }) {
     document.body.removeChild(link);
   };
 
-  const toggleEvent = (eventId) => {
-    setOpenEvent(openEvent === eventId ? null : eventId);
-  };
-
   return (
     <>
       {/* Main Content */}
@@ -119,14 +113,12 @@ function EventPage({ embedded = false }) {
             {events.map((event) => (
               <Card
                 key={event.id}
-                className={`p-6 cursor-pointer ${openEvent === event.id ? 'lg:col-span-2' : ''}`}
-                onClick={() => toggleEvent(event.id)}
+                className="p-6"
               >
                 <h2 className="text-xl font-semibold text-sage-900 mb-2">
                   {event.name}
                 </h2>
-                {openEvent === event.id && (
-                  <div className="mt-4 space-y-4" onClick={(e) => e.stopPropagation()}>
+                <div className="mt-4 space-y-4">
                     <div className="space-y-2">
                       <p className="text-sage-700"><strong>Date:</strong> {event.date}</p>
                       <p className="text-sage-700"><strong>Time:</strong> {event.time}</p>
@@ -212,8 +204,7 @@ function EventPage({ embedded = false }) {
                         RSVP Now
                       </a>
                     </div>
-                  </div>
-                )}
+                </div>
               </Card>
             ))}
           </div>
