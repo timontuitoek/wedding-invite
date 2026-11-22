@@ -5,6 +5,15 @@ import Card from './ui/Card';
 function EventPage({ embedded = false }) {
   const events = siteConfig.events.events;
 
+  const formatDisplayDate = (dateStr) => {
+    const [year, month, day] = dateStr.split('-');
+    return new Date(year, month - 1, day).toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
+  };
+
   // Calendar integration helpers
   const formatDateForCalendar = (dateStr, timeStr) => {
     // Parse date and time
@@ -128,7 +137,7 @@ function EventPage({ embedded = false }) {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <p className="rounded-xl bg-ivory-50/80 px-4 py-3 text-sage-700">
-                        <strong className="mr-1 text-sage-900">Date:</strong> {event.date}
+                        <strong className="mr-1 text-sage-900">Date:</strong> {formatDisplayDate(event.date)}
                       </p>
                       <p className="rounded-xl bg-ivory-50/80 px-4 py-3 text-sage-700">
                         <strong className="mr-1 text-sage-900">Time:</strong> {event.time}

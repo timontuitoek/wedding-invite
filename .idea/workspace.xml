@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="Update Open Graph and Twitter meta tags to use new wedding mark image">
+    <list default="true" id="ebbd7666-603b-490e-b51b-92f83a036940" name="Changes" comment="Update footer tagline and Open Graph meta tags to reflect new wedding theme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/siteConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/siteConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,23 +41,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.2276041981167962" />
-      <entry key="MS500" value="3.088833202402468" />
-      <entry key="S2" value="5.535687915151427" />
-      <entry key="S5" value="7.3680341211046345" />
-      <entry key="S10" value="10.375137596984283" />
-      <entry key="S30" value="19.247844996891843" />
-      <entry key="S60" value="27.970191245240432" />
-      <entry key="M2" value="36.7398164327167" />
-      <entry key="M5" value="44.824090850634924" />
-      <entry key="M10" value="48.20071365213022" />
-      <entry key="M15" value="49.41854308053467" />
-      <entry key="M30" value="50.86847283116302" />
-      <entry key="H1" value="54.466180357978764" />
-      <entry key="H2" value="68.55653476260541" />
-      <entry key="H4" value="94.9808566586652" />
-      <entry key="D1" value="150.6783945428357" />
-      <entry key="W1" value="166.17853684281616" />
+      <entry key="MS100" value="1.000000000021206" />
+      <entry key="MS500" value="1.0248299203717885" />
+      <entry key="S2" value="3.352664275300988" />
+      <entry key="S5" value="7.968638599733021" />
+      <entry key="S10" value="12.746072343496191" />
+      <entry key="S30" value="23.531239020823595" />
+      <entry key="S60" value="33.06801937204177" />
+      <entry key="M2" value="42.517354134903364" />
+      <entry key="M5" value="51.234991221295495" />
+      <entry key="M10" value="54.885228672678174" />
+      <entry key="M15" value="56.203183175215564" />
+      <entry key="M30" value="57.757808830810205" />
+      <entry key="H1" value="61.407248010747224" />
+      <entry key="H2" value="75.52006229642942" />
+      <entry key="H4" value="101.95605451693271" />
+      <entry key="D1" value="157.67195435781113" />
+      <entry key="W1" value="173.17752511860039" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -80,23 +79,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.1272728584439404" />
-      <entry key="MS500" value="3.0267759866667956" />
-      <entry key="S2" value="5.504862827452678" />
-      <entry key="S5" value="7.351450549655808" />
-      <entry key="S10" value="10.36289750671021" />
-      <entry key="S30" value="19.2395261433079" />
-      <entry key="S60" value="27.96385693086073" />
-      <entry key="M2" value="36.73551302875471" />
-      <entry key="M5" value="44.82193886841227" />
-      <entry key="M10" value="48.19954638808703" />
-      <entry key="M15" value="49.41774234903407" />
-      <entry key="M30" value="50.86801710054264" />
-      <entry key="H1" value="54.46567385208546" />
-      <entry key="H2" value="68.55586146729978" />
-      <entry key="H4" value="94.98023617134355" />
-      <entry key="D1" value="150.6782140636321" />
-      <entry key="W1" value="166.17850836503763" />
+      <entry key="MS100" value="0.9460576467447922" />
+      <entry key="MS500" value="1.0127304884727761" />
+      <entry key="S2" value="3.3203022317933693" />
+      <entry key="S5" value="7.934258977303718" />
+      <entry key="S10" value="12.719674455932964" />
+      <entry key="S30" value="23.516545441678268" />
+      <entry key="S60" value="33.05820215124127" />
+      <entry key="M2" value="42.51120170668035" />
+      <entry key="M5" value="51.23206215864414" />
+      <entry key="M10" value="54.883664960209416" />
+      <entry key="M15" value="56.202116228659726" />
+      <entry key="M30" value="57.75721907549831" />
+      <entry key="H1" value="61.406674484643254" />
+      <entry key="H2" value="75.51935555929005" />
+      <entry key="H4" value="101.95541729193653" />
+      <entry key="D1" value="157.67177107027135" />
+      <entry key="W1" value="173.17749623871944" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -120,12 +119,12 @@
     </option>
     <option name="panelTemplate">
       <template>
-        <option name="ensembleEnabled" value="false" />
+        <option name="ensembleEnabled" value="true" />
         <option name="modeId" value="Agent" />
         <option name="model">
           <model>
             <option name="modelType" value="builtin_id" />
-            <option name="modelValue" value="auto" />
+            <option name="modelValue" value="ensemble" />
           </model>
         </option>
         <option name="targetType" value="BACKGROUND" />
@@ -138,28 +137,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/tuitoek/WebstormProjects/microrealestate&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/tuitoek/WebstormProjects/microrealestate",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.editor",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -196,7 +196,10 @@
       <workItem from="1793006641022" duration="836000" />
       <workItem from="1793011198298" duration="1677000" />
       <workItem from="1794387465676" duration="256000" />
-      <workItem from="1794387803018" duration="27196000" />
+      <workItem from="1794387803018" duration="27513000" />
+      <workItem from="1795349383980" duration="261000" />
+      <workItem from="1795349729714" duration="109000" />
+      <workItem from="1795350000119" duration="1119000" />
     </task>
     <task id="LOCAL-00001" summary="Update wedding details and contact information in configuration">
       <option name="closed" value="true" />
@@ -294,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794436245125</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Update footer tagline and Open Graph meta tags to reflect new wedding theme">
+      <option name="closed" value="true" />
+      <created>1794437750010</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1794437750010</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +323,7 @@
     <MESSAGE value="Update wedding logo and enhance Open Graph and Twitter meta tags with new image alt text" />
     <MESSAGE value="Update wedding celebration details and enhance Open Graph and Twitter meta tags with new share image" />
     <MESSAGE value="Update Open Graph and Twitter meta tags to use new wedding mark image" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Open Graph and Twitter meta tags to use new wedding mark image" />
+    <MESSAGE value="Update footer tagline and Open Graph meta tags to reflect new wedding theme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update footer tagline and Open Graph meta tags to reflect new wedding theme" />
   </component>
 </project>

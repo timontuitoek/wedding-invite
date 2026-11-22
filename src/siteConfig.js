@@ -60,7 +60,7 @@ const siteConfig = {
 
   // Wedding Date (for countdown timer)
   wedding: {
-    date: "2027-02-06T10:00:00", // ISO format date/time
+    date: "2026-12-18T10:00:00", // ISO format date/time
     location: "AIC Milimani, Nairobi, KE — State House Avenue, next to Lady North Nursery",
   },
 
@@ -121,7 +121,7 @@ const siteConfig = {
       {
         id: 1,
         name: "Wedding Event Details",
-        date: "2027-02-06",
+        date: "2026-12-18",
         time: "10:00 AM",
         venue: "AIC Milimani, Nairobi, KE — State House Avenue, next to Lady North Nursery",
         mapEmbed: "https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3988.8114145647123!2d36.80800067323749!3d-1.2872550987005096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x182f10cf42a495c9%3A0xd8eb6c8597d7b8eb!2sAIC%20Milimani%2C%20Nairobi%20KE%2C%20State%20House%20Avenue%2C%20Next%20to%20Lady%20North%20Nursery%2C%20Nairobi%2C%20Kenya!3m2!1d-1.2872550999999999!2d36.8105756!5e0!3m2!1sen!2sus!4v1792091356084!5m2!1sen!2sus",
